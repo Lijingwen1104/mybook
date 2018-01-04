@@ -270,9 +270,107 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="&#x6570;&#x7EC4;&#x65B9;&#x6CD5;&#x7684;&#x5B9E;&#x73B0;">&#x6570;&#x7EC4;&#x65B9;&#x6CD5;&#x7684;&#x5B9E;&#x73B0;</h3>
+                                <h3 id="&#x6570;&#x7EC4;&#x5404;&#x79CD;&#x5FAA;&#x73AF;&#x65B9;&#x6CD5;">&#x6570;&#x7EC4;&#x5404;&#x79CD;&#x5FAA;&#x73AF;&#x65B9;&#x6CD5;</h3>
+<h4 id="foreach">forEach</h4>
+<p><a href="https://babeljs.io/repl/#?babili=false&amp;browsers=&amp;build=&amp;builtIns=false&amp;code_lz=DYUwLgBAhgTjEF4IG0BEVUBoKoEZZwGNUBdAKAEE4oBPAOgAcYB7MVmhkOgWxoDFmMAKJRCAC0QQAZgFcAdoTABLZnIgAKWXICUEAN5kIR6YI0A3WBCWSADAG4rEADwQwYpQGc6oOQHM3DkoA1EG6BsYR0vLqbp7ISiTYStixHtp2hsYAvmQ5sDA8_IIi4pryiipq6hbAMiBJcgAmIAAe2Pm0YZlGhKoezKDezL7VULX1Vk2t7dQ02rnpRkA&amp;debug=false&amp;circleciRepo=&amp;evaluate=true&amp;lineWrap=true&amp;presets=es2015%2Cstage-2&amp;prettier=false&amp;targets=&amp;version=6.26.0" target="_blank">&#x5728;&#x7EBF;&#x6F14;&#x793A;</a></p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> arr = [<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>]
+<span class="hljs-built_in">Array</span>.prototype.myForEach = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">fun</span>) </span>{
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-keyword">this</span>.length; i++) {
+        fun(<span class="hljs-keyword">this</span>[i], i, <span class="hljs-keyword">this</span>);
+    }
+}
+arr.myForEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value, index, array</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(value, index, array)
+});
+</code></pre>
+<h4 id="map">map</h4>
+<p><a href="https://babeljs.io/repl/#?babili=false&amp;browsers=&amp;build=&amp;builtIns=false&amp;code_lz=DYUwLgBAhgTjEF4IG0BEVUBoKoEZZwGNUBdAKAEE4oBPAOgAcYB7MVmhkOgWxoFkoDRBABmAVwB2hMAEtmEiAApxEgJQQA3mQgQAbrAi9YMWsOQkA3NtHN4i_fBnCADBYhOAPBDAALGQGc6UAkAc183GQBqSPUtHR0janoGMX8fZUlFXwDkGRJsGWxs_1VVKx0AX2sYcDEYBUSTGisqhwgJEAB3Y2FjHn5BDKlZeSV9YDEQAokAExAAD2xjWljq2vq9KAmQCEicACZUFtUyQnl_ZlAg5hDFDu64MrIgA&amp;debug=false&amp;circleciRepo=&amp;evaluate=true&amp;lineWrap=true&amp;presets=es2015%2Cstage-2&amp;prettier=false&amp;targets=&amp;version=6.26.0" target="_blank">&#x5728;&#x7EBF;&#x6F14;&#x793A;</a></p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> arr = [<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>]
+<span class="hljs-built_in">Array</span>.prototype.myMap = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">fun</span>) </span>{
+  <span class="hljs-keyword">var</span> myarray = [];
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-keyword">this</span>.length; i++) {
+    myarray.push(fun(<span class="hljs-keyword">this</span>[i], i, <span class="hljs-keyword">this</span>));
+  }
+  <span class="hljs-keyword">return</span> myarray;
+}
+<span class="hljs-keyword">var</span> newarr = arr.myMap(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value, index, array</span>) </span>{
+  <span class="hljs-keyword">return</span> value + <span class="hljs-string">&quot;2&quot;</span>;
+})
+<span class="hljs-built_in">console</span>.log(newarr);
+</code></pre>
+<h4 id="every">every</h4>
+<p><a href="https://babeljs.io/repl/#?babili=false&amp;browsers=&amp;build=&amp;builtIns=false&amp;code_lz=DYUwLgBAhgTjEF4IG0BEVUBoKoEZZwGNUBdAKAEE4oBPAOgAcYB7MVmhkOgWxoFEAbiBg1EEAGYBXAHaEwAS2bSIACinSAlBADeZCPogDYEXrmbNgYsDEkgA3HoPjm8FUfjyxABjsRPAHggwAAt5AGc6UGkAcxDfeQBqBK1dAwNHNP1Tc0skbIsIADJCiRkVEPDkeRJseWwKsI0MiABfZphwSRhlfOAyNvcIMwKkWBgefiERNRk5RWU3KGBbWukAExAAD2wx2hT2zu7DJdsIAEIkVE3UX36mwiUwiy5gZmiVYeANOyA&amp;debug=false&amp;circleciRepo=&amp;evaluate=true&amp;lineWrap=true&amp;presets=es2015%2Cstage-2&amp;prettier=false&amp;targets=&amp;version=6.26.0" target="_blank">&#x5728;&#x7EBF;&#x94FE;&#x63A5;</a></p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> arr = [<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>]
+<span class="hljs-built_in">Array</span>.prototype.myEvery = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">fun</span>) </span>{
+    <span class="hljs-keyword">var</span> mybool = <span class="hljs-literal">true</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-keyword">this</span>.length; i++) {
+
+        mybool = mybool &amp;&amp; fun(<span class="hljs-keyword">this</span>[i], i, <span class="hljs-keyword">this</span>)
+    }
+    <span class="hljs-keyword">return</span> mybool
+}
+<span class="hljs-keyword">var</span> bool = arr.myEvery(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value, index, array</span>) </span>{
+    <span class="hljs-keyword">return</span> value != <span class="hljs-string">&quot;x&quot;</span>; 
+})
+<span class="hljs-built_in">console</span>.log(bool);
+</code></pre>
+<h4 id="some">some</h4>
+<p><a href="https://babeljs.io/repl/#?babili=false&amp;browsers=&amp;build=&amp;builtIns=false&amp;code_lz=DYUwLgBAhgTjEF4IG0BEVUBoKoEZZwGNUBdAKAEE4oBPAOgAcYB7MVmhkOgWxoGVm3EIggAzAK4A7QmACWzSRAAUEyQEoIAbzIRdEAG6wIvXM2bARoqMADOIANw69o5vCWH4skQAZ7ELwA8EGAAFrI2dKCSAOahfrIA1Aka2nppEAD0GcY0sDC0jOI2ISpSSqHhyLIkmLKYFTZqao7peiZmFkjt5hAAPr1iZQ1VNf7YDc1OugC-UxAw4OIwit3AjrMeEKbmAEwieTz8giCl0nIKyobA4iDYspIAJiAAHth5tClzC2BLilc3iCQ6FQ6zUZEIChs5i4wGY0SU22AOzUQA&amp;debug=false&amp;circleciRepo=&amp;evaluate=true&amp;lineWrap=true&amp;presets=es2015%2Cstage-2&amp;prettier=false&amp;targets=&amp;version=6.26.0" target="_blank">&#x5728;&#x7EBF;&#x94FE;&#x63A5;</a></p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> arr = [<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-string">&quot;b&quot;</span>, <span class="hljs-string">&quot;c&quot;</span>]
+<span class="hljs-built_in">Array</span>.prototype.mySome = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">fun</span>) </span>{
+    <span class="hljs-keyword">var</span> mybool = <span class="hljs-literal">false</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-keyword">this</span>.length; i++) {
+        <span class="hljs-comment">// myarray.push(fun(this[i],i,this));</span>
+        mybool = mybool || fun(<span class="hljs-keyword">this</span>[i], i, <span class="hljs-keyword">this</span>);
+    }
+    <span class="hljs-keyword">return</span> mybool;
+}
+<span class="hljs-keyword">var</span> bool2 = arr.mySome(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value, index, array</span>) </span>{
+    <span class="hljs-keyword">return</span> value == <span class="hljs-string">&quot;a&quot;</span>;
+})
+<span class="hljs-built_in">console</span>.log(bool2)
+</code></pre>
+<h4 id="filter">filter</h4>
+<p><a href="https://babeljs.io/repl/#?babili=false&amp;browsers=&amp;build=&amp;builtIns=false&amp;code_lz=G4QwTgBOYEwQvBA2gRgAwBoIpVlMBdAbgCgBBMMEATwDoAHMAewBdXr6BTWgW2oDEAlgBsWnSIgBmAVwB2AYxaCmsiAAoZsgJQQA3iQiGIoSH2g0EyYgaOSmkNSYiDLaIs4gAeCCwAWggGdaYU5ZAHM_d0EAamidfSNE50l1TTU_QKRBAixBLAyArXibJKSzShoGaQDfdP8ArIItEqSAXxb2xLBOFmkwVXKqalJ2p1lOAHdoOERp3gERMTANOUVlVUcQYWlOXNkAE04ADyxzamKunr7VUG3OCAA-bDcSVub5FQCmEOCmMLVxlNKDAtEQgA&amp;debug=false&amp;circleciRepo=&amp;evaluate=true&amp;lineWrap=true&amp;presets=es2015%2Cstage-2&amp;prettier=false&amp;targets=&amp;version=6.26.0" target="_blank">&#x5728;&#x7EBF;&#x94FE;&#x63A5;</a></p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> arr2 = [<span class="hljs-number">10</span>, <span class="hljs-number">11</span>, <span class="hljs-number">12</span>];
+<span class="hljs-built_in">Array</span>.prototype.myFilter = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">fun</span>) </span>{
+    <span class="hljs-keyword">var</span> myarray = [];
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-keyword">this</span>.length; i++) {
+        <span class="hljs-keyword">if</span> (fun(<span class="hljs-keyword">this</span>[i], i, <span class="hljs-keyword">this</span>)) {
+            myarray.push(<span class="hljs-keyword">this</span>[i])
+        }
+    }
+    <span class="hljs-keyword">return</span> myarray;
+}
+<span class="hljs-keyword">let</span> newarr2 = arr2.myFilter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value, index, array</span>) </span>{
+    <span class="hljs-keyword">return</span> value &gt; <span class="hljs-number">10</span>;
+})
+<span class="hljs-built_in">console</span>.log(newarr2);
+</code></pre>
+<h4 id="reduce">reduce</h4>
+<p><a href="https://babeljs.io/repl/#?babili=false&amp;browsers=&amp;build=&amp;builtIns=false&amp;code_lz=DYUwLgBAhgTjBMEC8EDaBGADAGgu9u68AugNwBQAgnFAJ4B0ADjAPZhu2Mj0C2tASiAAmAVwDGIZBABmIgHZiwASxZyIACllzcSuUuVRgASggBvchEsQAbrGgRsSilYhLpG3fqWGkv-UJBpXWETcxcXKCkwAAslAGdUTDILcMslJHRnKwBfCBBgOMkw1PsUTwNgLNT0zCqIbJTLaRYYdVIlAB4Y-PpQOQBzGPaAamGjYtSoFC11KGxuhKViR3nYuKM6hpcYcBEYNSgKBtsYCHYwQylYBF4BYXEQTXlFFTV1ZhBcORAADzAdOQBH64a50UKNCA7MB7NQfCDDCDfP5HXCYIzkMSqOIsUC9Fj9dTnQwbIA&amp;debug=false&amp;circleciRepo=&amp;evaluate=true&amp;lineWrap=true&amp;presets=es2015%2Cstage-2&amp;prettier=false&amp;targets=&amp;version=6.26.0" target="_blank">&#x5728;&#x7EBF;&#x94FE;&#x63A5;</a></p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> arr2 = [<span class="hljs-number">10</span>, <span class="hljs-number">11</span>, <span class="hljs-number">12</span>];
+<span class="hljs-built_in">Array</span>.prototype.myReduce = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">fun, initial</span>) </span>{
+    <span class="hljs-keyword">var</span> a ,i;
+    <span class="hljs-keyword">if</span> (initial===<span class="hljs-literal">undefined</span>) {
+        a = <span class="hljs-keyword">this</span>[<span class="hljs-number">0</span>];
+        i=<span class="hljs-number">1</span>;
+    } <span class="hljs-keyword">else</span> {
+        a = initial;
+        i=<span class="hljs-number">0</span>;
+    }
+    <span class="hljs-keyword">for</span>(;i&lt;<span class="hljs-keyword">this</span>.length;i++){
+        a= fun(a,<span class="hljs-keyword">this</span>[i],i,<span class="hljs-keyword">this</span>);
+    }
+    <span class="hljs-keyword">return</span> a;
+}
+<span class="hljs-keyword">var</span> total = arr2.myReduce(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">pre, next, index, array</span>) </span>{
+    <span class="hljs-keyword">return</span> pre + next;
+}, <span class="hljs-number">0</span>)
+<span class="hljs-built_in">console</span>.log(total);
+</code></pre>
 <footer class="page-footer"><span class="copyright">lijingwen.me@foxmail.com all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2018-01-04 15:58:56
+2018-01-04 17:31:26
 </span></footer>
                                 
                                 </section>
@@ -330,7 +428,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"数组方法的实现","level":"1.2","depth":1,"next":{"title":"正则表达式基本语法","level":"1.3","depth":1,"path":"javascript/reg.md","ref":"javascript/reg.md","articles":[]},"previous":{"title":"简介","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-vuejs","toggle-chapters","splitter","tbfed-pagefooter","-sharing"],"styles":{"website":"static/website.css","ebook":"static/website.css","pdf":"static/website.css","mobi":"static/website.css","epub":"static/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"lijingwen.me@foxmail.com","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"splitter":{},"search":{},"theme-vuejs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mybook","gitbook":"*"},"file":{"path":"javascript/array.md","mtime":"2018-01-04T07:58:56.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-04T08:34:30.356Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"数组方法的实现","level":"1.2","depth":1,"next":{"title":"正则表达式基本语法","level":"1.3","depth":1,"path":"javascript/reg.md","ref":"javascript/reg.md","articles":[]},"previous":{"title":"简介","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-vuejs","toggle-chapters","splitter","tbfed-pagefooter","-sharing"],"styles":{"website":"static/website.css","ebook":"static/website.css","pdf":"static/website.css","mobi":"static/website.css","epub":"static/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"lijingwen.me@foxmail.com","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"splitter":{},"search":{},"theme-vuejs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mybook","gitbook":"*"},"file":{"path":"javascript/array.md","mtime":"2018-01-04T09:31:26.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-04T10:53:37.696Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -363,91 +363,171 @@ db.collection_name.remove({})</p>
 db.collection_name.find().pretty() &#x683C;&#x5F0F;&#x5316;&#x65B9;&#x5F0F;&#x663E;&#x793A;&#x6240;&#x6709;&#x6587;&#x6863;
 db.collection_name.findOne()&#x65B9;&#x6CD5;&#xFF0C;&#x53EA;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6587;&#x6863;</p>
 </li>
-<li><p>&#x64CD;&#x4F5C;
-&#x683C;&#x5F0F;
-&#x8303;&#x4F8B;
-RDBMS&#x4E2D;&#x7684;&#x7C7B;&#x4F3C;&#x8BED;&#x53E5;
-&#x7B49;&#x4E8E;
-{<key>:<value>}</value></key></p>
-</li>
-<li><p>db.col.find({&quot;by&quot;:&quot;&#x83DC;&#x9E1F;&#x6559;&#x7A0B;&quot;}).pretty()
-where by = &apos;&#x83DC;&#x9E1F;&#x6559;&#x7A0B;&apos;
-&#x5C0F;&#x4E8E;
-{<key>:{$lt:<value>}}
-db.col.find({&quot;likes&quot;:{$lt:50}}).pretty()
-where likes &lt; 50
-&#x5C0F;&#x4E8E;&#x6216;&#x7B49;&#x4E8E;
-{<key>:{$lte:<value>}}
-db.col.find({&quot;likes&quot;:{$lte:50}}).pretty()
-where likes &lt;= 50
-&#x5927;&#x4E8E;
-{<key>:{$gt:<value>}}
-db.col.find({&quot;likes&quot;:{$gt:50}}).pretty()
-where likes &gt; 50
-&#x5927;&#x4E8E;&#x6216;&#x7B49;&#x4E8E;
-{<key>:{$gte:<value>}}
-db.col.find({&quot;likes&quot;:{$gte:50}}).pretty()
-where likes &gt;= 50
-&#x4E0D;&#x7B49;&#x4E8E;
-{<key>:{$ne:<value>}}
-db.col.find({&quot;likes&quot;:{$ne:50}}).pretty()
-where likes != 50</value></key></value></key></value></key></value></key></value></key></p>
-</li>
-<li><p>and&#x6761;&#x4EF6;&#x67E5;&#x8BE2;
-db.collection_name.find({key1:value1, key2:value2}).pretty()</p>
-</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>&#x64CD;&#x4F5C;</th>
+<th>&#x683C;&#x5F0F;</th>
+<th>&#x8303;&#x4F8B;</th>
+<th>RDBMS&#x4E2D;&#x7684;&#x7C7B;&#x4F3C;&#x8BED;&#x53E5; </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x7B49;&#x4E8E;</td>
+<td>{<key>:<value>}</value></key></td>
+<td>db.col.find({&quot;by&quot;:&quot;&#x83DC;&#x9E1F;&#x6559;&#x7A0B;&quot;}).pretty()</td>
+<td>where by = &apos;&#x83DC;&#x9E1F;&#x6559;&#x7A0B;&apos; </td>
+</tr>
+<tr>
+<td>&#x5C0F;&#x4E8E;</td>
+<td>{<key>:{$lt:<value>}}</value></key></td>
+<td>db.col.find({&quot;likes&quot;:{$lt:50}}).pretty()</td>
+<td>where likes &lt; 50 </td>
+</tr>
+<tr>
+<td>&#x5C0F;&#x4E8E;&#x6216;&#x7B49;&#x4E8E;</td>
+<td>{<key>:{$lte:<value>}}</value></key></td>
+<td>db.col.find({&quot;likes&quot;:{$lte:50}}).pretty()</td>
+<td>where likes &lt;= 50 </td>
+</tr>
+<tr>
+<td>&#x5927;&#x4E8E;</td>
+<td>{<key>:{$gt:<value>}}</value></key></td>
+<td>db.col.find({&quot;likes&quot;:{$gt:50}}).pretty()</td>
+<td>where likes &gt; 50 </td>
+</tr>
+<tr>
+<td>&#x5927;&#x4E8E;&#x6216;&#x7B49;&#x4E8E;</td>
+<td>{<key>:{$gte:<value>}}</value></key></td>
+<td>db.col.find({&quot;likes&quot;:{$gte:50}}).pretty()</td>
+<td>where likes &gt;= 50 </td>
+</tr>
+<tr>
+<td>&#x4E0D;&#x7B49;&#x4E8E;</td>
+<td>{<key>:{$ne:<value>}}</value></key></td>
+<td>db.col.find({&quot;likes&quot;:{$ne:50}}).pretty()</td>
+<td>where likes != 50</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>and&#x6761;&#x4EF6;&#x67E5;&#x8BE2;
+db.collection_name.find({key1:value1, key2:value2}).pretty()</li>
 <li>or&#x6761;&#x4EF6;&#x67E5;&#x8BE2;
 db.collection_name.find({$or:[{&quot;key1&quot;:&quot;value1&quot;},  {&quot;key2&quot;:&quot;value2&quot;}]})</li>
 <li>and&#x548C;or&#x8054;&#x5408;&#x67E5;&#x8BE2;
 db.collection_name.find({&quot;likes&quot;: {$gt:50}, $or: [{&quot;by&quot;: &quot;&#x83DC;&#x9E1F;&#x6559;&#x7A0B;&quot;},{&quot;title&quot;: &quot;MongoDB &#x6559;&#x7A0B;&quot;}]}).pretty()</li>
 <li>$type&#x64CD;&#x4F5C;&#x7B26;
-db.collection_name.find({&quot;name&quot;:{$type:2}}
-&#x7C7B;&#x578B;
-&#x6570;&#x5B57;
-&#x5907;&#x6CE8;
-Double
-1</li>
+db.collection_name.find({&quot;name&quot;:{$type:2}}</li>
 </ul>
-<p>String
-2</p>
-<p>Object
-3</p>
-<p>Array
-4</p>
-<p>Binary data
-5</p>
-<p>Undefined
-6
-&#x5DF2;&#x5E9F;&#x5F03;&#x3002;
-Object id
-7</p>
-<p>Boolean
-8</p>
-<p>Date
-9</p>
-<p>Null
-10</p>
-<p>Regular Expression
-11</p>
-<p>JavaScript
-13</p>
-<p>Symbol
-14</p>
-<p>JavaScript (with scope)
-15</p>
-<p>32-bit integer
-16</p>
-<p>Timestamp
-17</p>
-<p>64-bit integer
-18</p>
-<p>Min key
-255
-Query with -1.</p>
-<ul>
-<li>Max key
-127</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x6570;&#x5B57;</th>
+<th>&#x5907;&#x6CE8;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Double</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>String</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>Object</td>
+<td>3</td>
+<td></td>
+</tr>
+<tr>
+<td>Array</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>Binary data</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td>Undefined</td>
+<td>6</td>
+<td>&#x5DF2;&#x5E9F;&#x5F03;&#x3002;</td>
+</tr>
+<tr>
+<td>Object id</td>
+<td>7</td>
+<td></td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td>8</td>
+<td></td>
+</tr>
+<tr>
+<td>Date</td>
+<td>9</td>
+<td></td>
+</tr>
+<tr>
+<td>Null</td>
+<td>10</td>
+<td></td>
+</tr>
+<tr>
+<td>Regular Expression</td>
+<td>11</td>
+<td></td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>13</td>
+<td></td>
+</tr>
+<tr>
+<td>Symbol</td>
+<td>14</td>
+<td></td>
+</tr>
+<tr>
+<td>JavaScript (with scope)</td>
+<td>15</td>
+<td></td>
+</tr>
+<tr>
+<td>32-bit integer</td>
+<td>16</td>
+<td></td>
+</tr>
+<tr>
+<td>Timestamp</td>
+<td>17</td>
+<td></td>
+</tr>
+<tr>
+<td>64-bit integer</td>
+<td>18</td>
+<td></td>
+</tr>
+<tr>
+<td>Min key</td>
+<td>255</td>
+<td>Query with  -1 </td>
+</tr>
+<tr>
+<td>Max key</td>
+<td>127</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <ul>
 <li><p>&#x8BFB;&#x53D6;&#x6307;&#x5B9A;&#x6570;&#x91CF;&#x7684;&#x8BB0;&#x5F55;Limit()
 db.collection_name.find().limit(number)</p>
@@ -462,53 +542,81 @@ db.collection_name.find().sort({key:number})</p>
 <li><p>&#x7D22;&#x5F15;
 &#x7D22;&#x5F15;&#x662F;&#x4E00;&#x79CD;&#x7279;&#x6B8A;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x50A8;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x6613;&#x4E8E;&#x904D;&#x5386;&#x8BFB;&#x53D6;&#x7684;&#x6570;&#x636E;&#x96C6;&#x5408;&#x4E2D;&#xFF0C;&#x7D22;&#x5F15;&#x662F;&#x5BF9;&#x6570;&#x636E;&#x5E93;&#x8868;&#x4E00;&#x5217;&#x6216;&#x591A;&#x5217;&#x7684;&#x503C;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x7684;&#x4E00;&#x79CD;&#x7ED3;&#x6784;&#x3002;&#x7D22;&#x5F15;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x591A;&#x4E2A;&#x5B57;&#x6BB5;&#x6784;&#x6210;&#x7684;&#x3002;
 &#x7D22;&#x5F15;&#x7684;&#x521B;&#x5EFA;
-db.collection_name.ensureIndex({key:1});//1&#x662F;&#x6309;&#x5347;&#x5E8F;&#x521B;&#x5EFA;&#x7D22;&#x5F15;&#xFF0C;-1&#x662F;&#x6309;&#x964D;&#x5E8F;&#x521B;&#x5EFA;&#x7D22;&#x5F15;
-Parameter
-Type
-Description
-background
-Boolean
-&#x5EFA;&#x7D22;&#x5F15;&#x8FC7;&#x7A0B;&#x4F1A;&#x963B;&#x585E;&#x5176;&#x5B83;&#x6570;&#x636E;&#x5E93;&#x64CD;&#x4F5C;&#xFF0C;background&#x53EF;&#x6307;&#x5B9A;&#x4EE5;&#x540E;&#x53F0;&#x65B9;&#x5F0F;&#x521B;&#x5EFA;&#x7D22;&#x5F15;&#xFF0C;&#x5373;&#x589E;&#x52A0; &quot;background&quot; &#x53EF;&#x9009;&#x53C2;&#x6570;&#x3002; &quot;background&quot; &#x9ED8;&#x8BA4;&#x503C;&#x4E3A;false&#x3002;</p>
+db.collection_name.ensureIndex({key:1});//1&#x662F;&#x6309;&#x5347;&#x5E8F;&#x521B;&#x5EFA;&#x7D22;&#x5F15;&#xFF0C;-1&#x662F;&#x6309;&#x964D;&#x5E8F;&#x521B;&#x5EFA;&#x7D22;&#x5F15;</p>
 </li>
-<li><p>unique
-Boolean
-&#x5EFA;&#x7ACB;&#x7684;&#x7D22;&#x5F15;&#x662F;&#x5426;&#x552F;&#x4E00;&#x3002;&#x6307;&#x5B9A;&#x4E3A;true&#x521B;&#x5EFA;&#x552F;&#x4E00;&#x7D22;&#x5F15;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;false.</p>
-</li>
-<li><p>name
-string
-&#x7D22;&#x5F15;&#x7684;&#x540D;&#x79F0;&#x3002;&#x5982;&#x679C;&#x672A;&#x6307;&#x5B9A;&#xFF0C;MongoDB&#x7684;&#x901A;&#x8FC7;&#x8FDE;&#x63A5;&#x7D22;&#x5F15;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#x548C;&#x6392;&#x5E8F;&#x987A;&#x5E8F;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x7D22;&#x5F15;&#x540D;&#x79F0;&#x3002;
-dropDups
-Boolean
-&#x5728;&#x5EFA;&#x7ACB;&#x552F;&#x4E00;&#x7D22;&#x5F15;&#x65F6;&#x662F;&#x5426;&#x5220;&#x9664;&#x91CD;&#x590D;&#x8BB0;&#x5F55;,&#x6307;&#x5B9A; true &#x521B;&#x5EFA;&#x552F;&#x4E00;&#x7D22;&#x5F15;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; false.</p>
-</li>
-<li><p>sparse
-Boolean
-&#x5BF9;&#x6587;&#x6863;&#x4E2D;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x5B57;&#x6BB5;&#x6570;&#x636E;&#x4E0D;&#x542F;&#x7528;&#x7D22;&#x5F15;&#xFF1B;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x9700;&#x8981;&#x7279;&#x522B;&#x6CE8;&#x610F;&#xFF0C;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E3A;true&#x7684;&#x8BDD;&#xFF0C;&#x5728;&#x7D22;&#x5F15;&#x5B57;&#x6BB5;&#x4E2D;&#x4E0D;&#x4F1A;&#x67E5;&#x8BE2;&#x51FA;&#x4E0D;&#x5305;&#x542B;&#x5BF9;&#x5E94;&#x5B57;&#x6BB5;&#x7684;&#x6587;&#x6863;.&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; false.</p>
-</li>
-<li><p>expireAfterSeconds
-integer
-&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x4EE5;&#x79D2;&#x4E3A;&#x5355;&#x4F4D;&#x7684;&#x6570;&#x503C;&#xFF0C;&#x5B8C;&#x6210; TTL&#x8BBE;&#x5B9A;&#xFF0C;&#x8BBE;&#x5B9A;&#x96C6;&#x5408;&#x7684;&#x751F;&#x5B58;&#x65F6;&#x95F4;&#x3002;
-v
-index version
-&#x7D22;&#x5F15;&#x7684;&#x7248;&#x672C;&#x53F7;&#x3002;&#x9ED8;&#x8BA4;&#x7684;&#x7D22;&#x5F15;&#x7248;&#x672C;&#x53D6;&#x51B3;&#x4E8E;mongod&#x521B;&#x5EFA;&#x7D22;&#x5F15;&#x65F6;&#x8FD0;&#x884C;&#x7684;&#x7248;&#x672C;&#x3002;
-weights
-document
-&#x7D22;&#x5F15;&#x6743;&#x91CD;&#x503C;&#xFF0C;&#x6570;&#x503C;&#x5728; 1 &#x5230; 99,999 &#x4E4B;&#x95F4;&#xFF0C;&#x8868;&#x793A;&#x8BE5;&#x7D22;&#x5F15;&#x76F8;&#x5BF9;&#x4E8E;&#x5176;&#x4ED6;&#x7D22;&#x5F15;&#x5B57;&#x6BB5;&#x7684;&#x5F97;&#x5206;&#x6743;&#x91CD;&#x3002;
-default_language
-string
-&#x5BF9;&#x4E8E;&#x6587;&#x672C;&#x7D22;&#x5F15;&#xFF0C;&#x8BE5;&#x53C2;&#x6570;&#x51B3;&#x5B9A;&#x4E86;&#x505C;&#x7528;&#x8BCD;&#x53CA;&#x8BCD;&#x5E72;&#x548C;&#x8BCD;&#x5668;&#x7684;&#x89C4;&#x5219;&#x7684;&#x5217;&#x8868;&#x3002; &#x9ED8;&#x8BA4;&#x4E3A;&#x82F1;&#x8BED;
-language_override
-string
-&#x5BF9;&#x4E8E;&#x6587;&#x672C;&#x7D22;&#x5F15;&#xFF0C;&#x8BE5;&#x53C2;&#x6570;&#x6307;&#x5B9A;&#x4E86;&#x5305;&#x542B;&#x5728;&#x6587;&#x6863;&#x4E2D;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#xFF0C;&#x8BED;&#x8A00;&#x8986;&#x76D6;&#x9ED8;&#x8BA4;&#x7684;language&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; language.</p>
-</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>background</td>
+<td>Boolean</td>
+<td>&#x5EFA;&#x7D22;&#x5F15;&#x8FC7;&#x7A0B;&#x4F1A;&#x963B;&#x585E;&#x5176;&#x5B83;&#x6570;&#x636E;&#x5E93;&#x64CD;&#x4F5C;&#xFF0C;background&#x53EF;&#x6307;&#x5B9A;&#x4EE5;&#x540E;&#x53F0;&#x65B9;&#x5F0F;&#x521B;&#x5EFA;&#x7D22;&#x5F15;&#xFF0C;&#x5373;&#x589E;&#x52A0; &quot;background&quot; &#x53EF;&#x9009;&#x53C2;&#x6570;&#x3002; &quot;background&quot; &#x9ED8;&#x8BA4;&#x503C;&#x4E3A;false&#x3002;</td>
+</tr>
+<tr>
+<td>unique</td>
+<td>Boolean</td>
+<td>&#x5EFA;&#x7ACB;&#x7684;&#x7D22;&#x5F15;&#x662F;&#x5426;&#x552F;&#x4E00;&#x3002;&#x6307;&#x5B9A;&#x4E3A;true&#x521B;&#x5EFA;&#x552F;&#x4E00;&#x7D22;&#x5F15;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;false. </td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>&#x7D22;&#x5F15;&#x7684;&#x540D;&#x79F0;&#x3002;&#x5982;&#x679C;&#x672A;&#x6307;&#x5B9A;&#xFF0C;MongoDB&#x7684;&#x901A;&#x8FC7;&#x8FDE;&#x63A5;&#x7D22;&#x5F15;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#x548C;&#x6392;&#x5E8F;&#x987A;&#x5E8F;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x7D22;&#x5F15;&#x540D;&#x79F0;&#x3002; </td>
+</tr>
+<tr>
+<td>dropDups</td>
+<td>Boolean</td>
+<td>&#x5728;&#x5EFA;&#x7ACB;&#x552F;&#x4E00;&#x7D22;&#x5F15;&#x65F6;&#x662F;&#x5426;&#x5220;&#x9664;&#x91CD;&#x590D;&#x8BB0;&#x5F55;,&#x6307;&#x5B9A; true &#x521B;&#x5EFA;&#x552F;&#x4E00;&#x7D22;&#x5F15;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; false. </td>
+</tr>
+<tr>
+<td>sparse</td>
+<td>Boolean</td>
+<td>&#x5BF9;&#x6587;&#x6863;&#x4E2D;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x5B57;&#x6BB5;&#x6570;&#x636E;&#x4E0D;&#x542F;&#x7528;&#x7D22;&#x5F15;&#xFF1B;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x9700;&#x8981;&#x7279;&#x522B;&#x6CE8;&#x610F;&#xFF0C;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E3A;true&#x7684;&#x8BDD;&#xFF0C;&#x5728;&#x7D22;&#x5F15;&#x5B57;&#x6BB5;&#x4E2D;&#x4E0D;&#x4F1A;&#x67E5;&#x8BE2;&#x51FA;&#x4E0D;&#x5305;&#x542B;&#x5BF9;&#x5E94;&#x5B57;&#x6BB5;&#x7684;&#x6587;&#x5F53;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; false. </td>
+</tr>
+<tr>
+<td>expireAfterSeconds</td>
+<td>integer</td>
+<td>&#x6307;&#x5B9A;&#x4E00;&#x4E2A;&#x4EE5;&#x79D2;&#x4E3A;&#x5355;&#x4F4D;&#x7684;&#x6570;&#x503C;&#xFF0C;&#x5B8C;&#x6210; TTL&#x8BBE;&#x5B9A;&#xFF0C;&#x8BBE;&#x5B9A;&#x96C6;&#x5408;&#x7684;&#x751F;&#x5B58;&#x65F6;&#x95F4;&#x3002; </td>
+</tr>
+<tr>
+<td>v</td>
+<td>index version</td>
+<td>&#x7D22;&#x5F15;&#x7684;&#x7248;&#x672C;&#x53F7;&#x3002;&#x9ED8;&#x8BA4;&#x7684;&#x7D22;&#x5F15;&#x7248;&#x672C;&#x53D6;&#x51B3;&#x4E8E;mongod&#x521B;&#x5EFA;&#x7D22;&#x5F15;&#x65F6;&#x8FD0;&#x884C;&#x7684;&#x7248;&#x672C;&#x3002; </td>
+</tr>
+<tr>
+<td>weights</td>
+<td>document</td>
+<td>&#x7D22;&#x5F15;&#x6743;&#x91CD;&#x503C;&#xFF0C;&#x6570;&#x503C;&#x5728; 1 &#x5230; 99,999 &#x4E4B;&#x95F4;&#xFF0C;&#x8868;&#x793A;&#x8BE5;&#x7D22;&#x5F15;&#x76F8;&#x5BF9;&#x4E8E;&#x5176;&#x4ED6;&#x7D22;&#x5F15;&#x5B57;&#x6BB5;&#x7684;&#x5F97;&#x5206;&#x6743;&#x91CD;&#x3002; </td>
+</tr>
+<tr>
+<td>default_language</td>
+<td>string</td>
+<td>&#x5BF9;&#x4E8E;&#x6587;&#x672C;&#x7D22;&#x5F15;&#xFF0C;&#x8BE5;&#x53C2;&#x6570;&#x51B3;&#x5B9A;&#x4E86;&#x505C;&#x7528;&#x8BCD;&#x53CA;&#x8BCD;&#x5E72;&#x548C;&#x8BCD;&#x5668;&#x7684;&#x89C4;&#x5219;&#x7684;&#x5217;&#x8868;&#x3002; &#x9ED8;&#x8BA4;&#x4E3A;&#x82F1;&#x8BED; </td>
+</tr>
+<tr>
+<td>language_override</td>
+<td>string</td>
+<td>&#x5BF9;&#x4E8E;&#x6587;&#x672C;&#x7D22;&#x5F15;&#xFF0C;&#x8BE5;&#x53C2;&#x6570;&#x6307;&#x5B9A;&#x4E86;&#x5305;&#x542B;&#x5728;&#x6587;&#x6863;&#x4E2D;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#xFF0C;&#x8BED;&#x8A00;&#x8986;&#x76D6;&#x9ED8;&#x8BA4;&#x7684;language&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;language.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
 <li><p>&#x805A;&#x5408;
-&#x7528;&#x4E8E;&#x5904;&#x7406;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x5E73;&#x5747;&#x503C;&#xFF0C;&#x6C42;&#x548C;&#x7B49;&#x3002;&#x5E76;&#x8FD4;&#x56DE;&#x8BA1;&#x7B97;&#x540E;&#x7684;&#x7ED3;&#x679C;&#x3002;
-db.collection_name.aggregate(aggregate_opration)
+&#x7528;&#x4E8E;&#x5904;&#x7406;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x5E73;&#x5747;&#x503C;&#xFF0C;&#x6C42;&#x548C;&#x7B49;&#x3002;&#x5E76;&#x8FD4;&#x56DE;&#x8BA1;&#x7B97;&#x540E;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+<pre><code class="lang-js">db.collection_name.aggregate(aggregate_opration)
 db.mycol.aggregate(  [
 {  $group :
-  {  _id : &quot;$by_user&quot;, num_tutorial :   {  $sum : 1  } }
+  {  _id : <span class="hljs-string">&quot;$by_user&quot;</span>, num_tutorial :   {  $sum : <span class="hljs-number">1</span>  } }
 }
-]  )</p>
+])
+</code></pre>
 </li>
 <li><p>&#x7BA1;&#x9053;&#x7684;&#x6982;&#x5FF5;
 &#x7BA1;&#x9053;&#x5728;Unix&#x548C;Linux&#x4E2D;&#x5C06;&#x5F53;&#x524D;&#x547D;&#x4EE4;&#x7684;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x4F5C;&#x4E3A;&#x4E0B;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x7684;&#x53C2;&#x6570;&#x3002;
@@ -526,7 +634,7 @@ $geoNear&#xFF1A;&#x8F93;&#x51FA;&#x63A5;&#x8FD1;&#x67D0;&#x4E00;&#x5730;&#x7406;
 </li>
 </ul>
 <footer class="page-footer"><span class="copyright">lijingwen.me@foxmail.com all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2018-01-04 16:27:59
+2018-01-04 18:52:47
 </span></footer>
                                 
                                 </section>
@@ -584,7 +692,7 @@ $geoNear&#xFF1A;&#x8F93;&#x51FA;&#x63A5;&#x8FD1;&#x67D0;&#x4E00;&#x5730;&#x7406;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"MongoDB基本语法","level":"1.8","depth":1,"next":{"title":"git基本语法","level":"1.9","depth":1,"path":"front/git.md","ref":"front/git.md","articles":[]},"previous":{"title":"浏览器内部工作原理","level":"1.7","depth":1,"path":"front/browserswork.md","ref":"front/browserswork.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-vuejs","toggle-chapters","splitter","tbfed-pagefooter","-sharing"],"styles":{"website":"static/website.css","ebook":"static/website.css","pdf":"static/website.css","mobi":"static/website.css","epub":"static/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"lijingwen.me@foxmail.com","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"splitter":{},"search":{},"theme-vuejs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mybook","gitbook":"*"},"file":{"path":"front/mongodb.md","mtime":"2018-01-04T08:27:59.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-04T08:34:30.356Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"MongoDB基本语法","level":"1.8","depth":1,"next":{"title":"git基本语法","level":"1.9","depth":1,"path":"front/git.md","ref":"front/git.md","articles":[]},"previous":{"title":"浏览器内部工作原理","level":"1.7","depth":1,"path":"front/browserswork.md","ref":"front/browserswork.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-vuejs","toggle-chapters","splitter","tbfed-pagefooter","-sharing"],"styles":{"website":"static/website.css","ebook":"static/website.css","pdf":"static/website.css","mobi":"static/website.css","epub":"static/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"lijingwen.me@foxmail.com","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"splitter":{},"search":{},"theme-vuejs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mybook","gitbook":"*"},"file":{"path":"front/mongodb.md","mtime":"2018-01-04T10:52:47.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-04T10:53:37.696Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

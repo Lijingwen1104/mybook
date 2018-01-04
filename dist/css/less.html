@@ -296,22 +296,24 @@
 </li>
 <li><p>&#x5E26;&#x53C2;&#x6570;&#x6DF7;&#x5408;&#xFF1A;</p>
 <ul>
-<li><p>&#x58F0;&#x660E;&#xFF1A;.border-radius(@radius){</p>
-<pre><code>       border-radius:@radius;
-       -moz-border-radius:@radius;
-       -webkit-border-radius:@radius;
+<li>&#x58F0;&#x660E;&#xFF1A;<pre><code class="lang-less"><span class="hljs-selector-class">.border-radius</span>(<span class="hljs-variable">@radius</span>){
+  <span class="hljs-attribute">border-radius</span>:<span class="hljs-variable">@radius</span>;
+  <span class="hljs-attribute">-moz-border-radius</span>:<span class="hljs-variable">@radius</span>;
+  <span class="hljs-attribute">-webkit-border-radius</span>:<span class="hljs-variable">@radius</span>;
 }
-</code></pre></li>
+</code></pre>
+</li>
 <li><p>&#x4F7F;&#x7528;&#xFF1A;.border-radius(6px);</p>
 </li>
-<li><p>&#x5E26;&#x9ED8;&#x8BA4;&#x503C;&#x7684;&#x58F0;&#x660E;&#xFF1A;.border-radius(@radius&#xFF1A;5px){</p>
-<pre><code>                      border-radius:@radius;
-                      -moz-border-radius:@radius;
-                      -webkit-border-radius:@radius;
-                 }
-</code></pre></li>
-<li><p>&#x4F7F;&#x7528;&#xFF1A;.border-radius;</p>
+<li><p>&#x5E26;&#x9ED8;&#x8BA4;&#x503C;&#x7684;&#x58F0;&#x660E;&#xFF1A;</p>
+<pre><code class="lang-less"><span class="hljs-selector-class">.border-radius</span>(<span class="hljs-variable">@radius</span>&#xFF1A;<span class="hljs-number">5px</span>){
+  <span class="hljs-attribute">border-radius</span>:<span class="hljs-variable">@radius</span>;
+  <span class="hljs-attribute">-moz-border-radius</span>:<span class="hljs-variable">@radius</span>;
+  <span class="hljs-attribute">-webkit-border-radius</span>:<span class="hljs-variable">@radius</span>;
+}
+</code></pre>
 </li>
+<li>&#x4F7F;&#x7528;&#xFF1A;.border-radius;</li>
 </ul>
 </li>
 <li><p>&#x591A;&#x53C2;&#x6570;&#x6DF7;&#x5408;</p>
@@ -346,29 +348,31 @@
 <ul>
 <li><p>&#x4F5C;&#x7528;&#xFF1A;&#x901A;&#x8FC7;&#x53C2;&#x6570;&#x63A7;&#x5236;mixin&#x884C;&#x4E3A;</p>
 </li>
-<li><p>&#x58F0;&#x660E;&#xFF1A;
-.minx(dark,@color){
-color:darken(@color,10%)
-}
-.minx(light,@color){
-color:lighten(@color,10%)
-}
-&#x2193;&#x63A5;&#x6536;&#x6240;&#x6709;&#x53C2;&#x6570;
-.minx(@_,@color){
-display:block;
-}</p>
+<li><p>&#x58F0;&#x660E;&#xFF1A;</p>
+<pre><code class="lang-less">  <span class="hljs-selector-class">.minx</span>(dark,<span class="hljs-variable">@color</span>){
+      <span class="hljs-selector-tag">color</span>:<span class="hljs-selector-tag">darken</span>(<span class="hljs-variable">@color</span>,<span class="hljs-number">10%</span>)
+  }
+  <span class="hljs-selector-class">.minx</span>(light,<span class="hljs-variable">@color</span>){
+      <span class="hljs-attribute">color</span>:lighten(<span class="hljs-variable">@color</span>,<span class="hljs-number">10%</span>)
+  }
+</code></pre>
+<p>&#x2193;&#x63A5;&#x6536;&#x6240;&#x6709;&#x53C2;&#x6570;</p>
+<pre><code class="lang-less">  <span class="hljs-selector-class">.minx</span>(<span class="hljs-variable">@_</span>,<span class="hljs-variable">@color</span>){
+      <span class="hljs-attribute">display</span>:block;
+  }
+</code></pre>
 </li>
-<li><p>&#x8C03;&#x7528;&#xFF1A;
-@switch:light;
-.class{
-.mixin(@switch,#888888) ;
-}</p>
+<li>&#x8C03;&#x7528;&#xFF1A;<pre><code class="lang-less">      <span class="hljs-variable">@switch:</span>light;
+      <span class="hljs-selector-class">.class</span>{
+          <span class="hljs-selector-class">.mixin</span>(<span class="hljs-variable">@switch</span>,<span class="hljs-number">#888888</span>) ;
+      }
+</code></pre>
 </li>
-<li><p>&#x5F97;&#x5230;&#xFF1A;
-.class{
-color:#a2a2a2;
-display:block;
-}</p>
+<li>&#x5F97;&#x5230;&#xFF1A;<pre><code class="lang-less">      <span class="hljs-selector-class">.class</span>{
+          <span class="hljs-attribute">color</span>:<span class="hljs-number">#a2a2a2</span>;
+          <span class="hljs-attribute">display</span>:block;
+      }
+</code></pre>
 </li>
 </ul>
 </li>
@@ -377,30 +381,31 @@ display:block;
 <li>&#x4F5C;&#x7528;&#xFF1A;&#x901A;&#x8FC7;&#x8868;&#x8FBE;&#x5F0F;&#xFF08;expressions&#xFF09;&#x63A7;&#x5236;minx&#x884C;&#x4E3A;</li>
 <li><p>&#x2193;&#x5B9E;&#x4F8B;&#xFF1A;&#x5224;&#x65AD;color&#x7684;&#x4EAE;&#x5EA6;&#xFF0C;&#x5927;&#x4E8E;50%&#x65F6;&#x80CC;&#x666F;&#x8272;&#x4E3A;&#x9ED1;&#xFF0C;&#x5C0F;&#x4E8E;&#x65F6;&#x80CC;&#x666F;&#x8272;&#x4E3A;&#x767D;&#x8272;</p>
 </li>
-<li><p>&#x58F0;&#x660E;&#xFF1A;
-. mixin ( @ a ) when ( lightness ( @ a ) &gt;= 50% ){
-background-color : black;
-}
-. mixin ( @ a ) when ( lightness ( @ a ) &lt; 50% ){
-background-color : white ;
-}
-. mixin ( @ a ) {
-color:@a;
-}</p>
+<li><p>&#x58F0;&#x660E;&#xFF1A;</p>
+<pre><code class="lang-less">  . <span class="hljs-selector-tag">mixin</span> ( @ a ) <span class="hljs-keyword">when</span> ( lightness ( @ a ) &gt;= <span class="hljs-number">50%</span> ){
+      <span class="hljs-attribute">background-color </span>: black;
+  }
+  . <span class="hljs-selector-tag">mixin</span> ( @ a ) <span class="hljs-keyword">when</span> ( lightness ( @ a ) &lt; <span class="hljs-number">50%</span> ){
+      <span class="hljs-attribute">background-color </span>: white ;
+  }
+  . <span class="hljs-selector-tag">mixin</span> ( @ a ) {
+      <span class="hljs-attribute">color</span>:<span class="hljs-variable">@a</span>;
+  }
+</code></pre>
 </li>
-<li><p>&#x8C03;&#x7528;&#xFF1A;
-.class1{  .minx ( #ddd )  }
-.class2{  .minx ( #555 )  }</p>
+<li>&#x8C03;&#x7528;&#xFF1A;<pre><code class="lang-less">  <span class="hljs-selector-class">.class1</span>{  <span class="hljs-selector-class">.minx</span> ( <span class="hljs-number">#ddd</span> )  }
+  <span class="hljs-selector-class">.class2</span>{  <span class="hljs-selector-class">.minx</span> ( <span class="hljs-number">#555</span> )  }
+</code></pre>
 </li>
-<li><p>&#x5F97;&#x5230;&#xFF1A;
-.class1 {
-background-color : black;
-color:#ddd;
-}
-.class2 {
-background-color : white;
-color:#555;
-}</p>
+<li>&#x5F97;&#x5230;&#xFF1A;<pre><code class="lang-less">  <span class="hljs-selector-class">.class1</span> {
+      <span class="hljs-attribute">background-color </span>: black;
+      <span class="hljs-attribute">color</span>:<span class="hljs-number">#ddd</span>;
+  }
+  <span class="hljs-selector-class">.class2</span> {
+      <span class="hljs-attribute">background-color </span>: white;
+      <span class="hljs-attribute">color</span>:<span class="hljs-number">#555</span>;
+  }
+</code></pre>
 </li>
 <li><p>&#x6CE8;&#x610F;&#xFF1A;&#x53EF;&#x4EE5;&#x53C2;&#x6570;&#x4E4B;&#x95F4;&#x4F5C;&#x6BD4;&#x8F83;&#x3002;&#x53EF;&#x4EE5;&#x68C0;&#x67E5;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x3002;&#x6216;&#x8005;&#x68C0;&#x67E5;&#x4F20;&#x5165;&#x503C;&#xFF08;&#x6570;&#x5B57;&#xFF09;&#x7684;&#x5355;&#x4F4D;&#x3002;</p>
 </li>
@@ -425,22 +430,23 @@ color:#555;
 <li><p>&#x4F5C;&#x7528;&#xFF1A;&#x53EF;&#x4EE5;&#x628A;&#x6DF7;&#x5408;&#x5C01;&#x88C5;&#x8D77;&#x6765;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x8C03;&#x7528;&#x65F6;&#x50CF;&#x8C03;&#x7528;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x4E00;&#x6837;&#x8C03;&#x7528;</p>
 </li>
 <li><p>&#x58F0;&#x660E;&#xFF1A;</p>
-<h1 id="bundle&#xFF5B;">bundle&#xFF5B;</h1>
-<p>&#x3000;. button ( ) {
-  display : block ;
-  border : 1px solid black;
-  background - color : gery;
-  &amp;&#xFF1A;hover { background-color : white  }
-}
-. tab {  ... }
-.citation { ... }
-}</p>
+<pre><code class="lang-less">  # bundle&#xFF5B;
+  &#x3000;. button ( ) {
+          display : block ;
+          border : 1px solid black;
+          background - color : gery;
+          &amp;&#xFF1A;hover { background-color : white  }
+      }
+      . tab {  ... }
+      .citation { ... }
+  }
+</code></pre>
 </li>
-<li><p>&#x8C03;&#x7528; &#xFF1A;</p>
-<h1 id="header-a">header a{</h1>
-<p>color :orange;</p>
-<h1 id="bundle---button-">bundle &gt; . button ;</h1>
-<p>}</p>
+<li>&#x8C03;&#x7528; &#xFF1A;<pre><code class="lang-less">  # <span class="hljs-selector-tag">header</span> <span class="hljs-selector-tag">a</span>{
+      <span class="hljs-attribute">color </span>:orange;
+      <span class="hljs-selector-id">#bundle</span> &gt; . <span class="hljs-selector-tag">button</span> ;
+  }
+</code></pre>
 </li>
 </ul>
 </li>
@@ -461,9 +467,10 @@ color:#555;
 <ul>
 <li><p>&#x8BF4;&#x660E;&#xFF1A;&#x53EF;&#x4EE5;&#x5728;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x63D2;&#x5165;&#x53D8;&#x91CF;</p>
 </li>
-<li><p>&#x4F7F;&#x7528;&#xFF1A;
-@base-url : &quot; <a href="http://localhost:8080" target="_blank">http://localhost:8080</a> &quot;
-background-imge : (  &quot; @ { base-url }  /images / bg.png &quot; )</p>
+<li><p>&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-less">  <span class="hljs-variable">@base-url :</span> <span class="hljs-string">&quot; http://localhost:8080 &quot;</span>
+  <span class="hljs-attribute">background-imge </span>: (  <span class="hljs-string">&quot; @ { base-url }  /images / bg.png &quot;</span> )
+</code></pre>
 </li>
 </ul>
 </li>
@@ -476,11 +483,12 @@ background-imge : (  &quot; @ { base-url }  /images / bg.png &quot; )</p>
 <ul>
 <li><p>&#x8BF4;&#x660E;&#xFF1A;&#x5728;&#x9009;&#x62E9;&#x5668;&#x4E2D;&#x4F7F;&#x7528;less&#x53D8;&#x91CF;</p>
 </li>
-<li><p>&#x4F7F;&#x7528;&#xFF1A;
-@name&#xFF1A;blocked&#xFF1B;
-. @ { name }{
-color : black ;
-}</p>
+<li><p>&#x4F7F;&#x7528;&#xFF1A;</p>
+<pre><code class="lang-less">  <span class="hljs-variable">@name</span>&#xFF1A;blocked&#xFF1B;
+  . @ { <span class="hljs-selector-tag">name</span> }{
+      <span class="hljs-attribute">color </span>: black ;
+  }
+</code></pre>
 </li>
 </ul>
 </li>
@@ -492,7 +500,7 @@ color : black ;
 </li>
 </ul>
 <footer class="page-footer"><span class="copyright">lijingwen.me@foxmail.com all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2018-01-04 16:20:01
+2018-01-04 17:50:43
 </span></footer>
                                 
                                 </section>
@@ -550,7 +558,7 @@ color : black ;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"less基本语法","level":"1.4","depth":1,"next":{"title":"sass基本语法","level":"1.5","depth":1,"path":"css/sass.md","ref":"css/sass.md","articles":[]},"previous":{"title":"正则表达式基本语法","level":"1.3","depth":1,"path":"javascript/reg.md","ref":"javascript/reg.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-vuejs","toggle-chapters","splitter","tbfed-pagefooter","-sharing"],"styles":{"website":"static/website.css","ebook":"static/website.css","pdf":"static/website.css","mobi":"static/website.css","epub":"static/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"lijingwen.me@foxmail.com","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"splitter":{},"search":{},"theme-vuejs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mybook","gitbook":"*"},"file":{"path":"css/less.md","mtime":"2018-01-04T08:20:01.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-04T08:34:30.356Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"less基本语法","level":"1.4","depth":1,"next":{"title":"sass基本语法","level":"1.5","depth":1,"path":"css/sass.md","ref":"css/sass.md","articles":[]},"previous":{"title":"正则表达式基本语法","level":"1.3","depth":1,"path":"javascript/reg.md","ref":"javascript/reg.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-vuejs","toggle-chapters","splitter","tbfed-pagefooter","-sharing"],"styles":{"website":"static/website.css","ebook":"static/website.css","pdf":"static/website.css","mobi":"static/website.css","epub":"static/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"lijingwen.me@foxmail.com","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"splitter":{},"search":{},"theme-vuejs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mybook","gitbook":"*"},"file":{"path":"css/less.md","mtime":"2018-01-04T09:50:43.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-04T10:53:37.696Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
