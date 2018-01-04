@@ -1,0 +1,19 @@
+{
+  "title": "mybook",
+  "styles": {
+    "website": "static/website.css",
+    "ebook": "static/website.css",
+    "pdf": "static/website.css",
+    "mobi": "static/website.css",
+    "epub": "static/website.css"
+ },
+  "plugins": ["theme-vuejs","toggle-chapters","splitter","tbfed-pagefooter","-sharing"],
+  "pluginsConfig":{
+    "tbfed-pagefooter": {
+      "copyright":"lijingwen.me@foxmail.com",
+      "modify_label": "该文件修订时间：",
+      "modify_format": "YYYY-MM-DD HH:mm:ss"
+    }
+  }
+
+}
