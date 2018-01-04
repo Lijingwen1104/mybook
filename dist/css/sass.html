@@ -1,0 +1,625 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>sass基本语法 · mybook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-vuejs/vue.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="css3.html" />
+    
+    
+    <link rel="prev" href="less.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+<!-- <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=vuejs" id="_carbonads_js"></script> -->
+
+
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../javascript/array.html">
+            
+                <a href="../javascript/array.html">
+            
+                    
+                    数组方法的实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../javascript/reg.html">
+            
+                <a href="../javascript/reg.html">
+            
+                    
+                    正则表达式基本语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="less.html">
+            
+                <a href="less.html">
+            
+                    
+                    less基本语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5" data-path="sass.html">
+            
+                <a href="sass.html">
+            
+                    
+                    sass基本语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="css3.html">
+            
+                <a href="css3.html">
+            
+                    
+                    css3
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../front/browserswork.html">
+            
+                <a href="../front/browserswork.html">
+            
+                    
+                    浏览器内部工作原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../front/mongodb.html">
+            
+                <a href="../front/mongodb.html">
+            
+                    
+                    MongoDB基本语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../front/git.html">
+            
+                <a href="../front/git.html">
+            
+                    
+                    git基本语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+  
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >sass基本语法</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="sass&#x57FA;&#x672C;&#x8BED;&#x6CD5;">sass&#x57FA;&#x672C;&#x8BED;&#x6CD5;</h3>
+<ul>
+<li><p>&#x5BFC;&#x5165;</p>
+<ul>
+<li><p>@improt &quot;a.scss&quot; &#x5BFC;&#x5165;&#x540E;&#x4F1A;&#x5C06;scss&#x6587;&#x4EF6;&#x5408;&#x5E76;&#x6210;&#x4E00;&#x4E2A;css&#x6587;&#x4EF6;&#x3002;&#x5BFC;&#x5165;&#x53EF;&#x4EE5;&#x5FFD;&#x7565;&#x540E;&#x7F00;&#x540D;&#x3002;_&#x5F00;&#x5934;&#x7684;&#x6587;&#x4EF6;&#x53EF;&#x4EE5;&#x4E0D;&#x5199;&#x4E0B;&#x5212;&#x7EBF;&#x3002;</p>
+</li>
+<li><p>&#x5982;&#x679C;&#x5BFC;&#x5165;css&#x6837;&#x5F0F;&#xFF0C;&#x4E0D;&#x4F1A;&#x7F16;&#x8BD1;&#xFF0C;&#x800C;&#x662F;@import&#x5F62;&#x5F0F;&#x5B58;&#x5728;</p>
+</li>
+</ul>
+</li>
+<li><p>&#x6CE8;&#x91CA;</p>
+<ul>
+<li>//&#x5355;&#x884C;&#x6CE8;&#x91CA;&#x4E0D;&#x8F93;&#x5165;&#x5230;css</li>
+<li>/**/</li>
+<li>/<em>! &#x91CD;&#x8981;&#x6CE8;&#x91CA;&#x4E0D;&#x4F1A;&#x5728;&#x538B;&#x7F29;&#x65F6;&#x88AB;&#x5220;&#x9664;</em>/</li>
+</ul>
+</li>
+<li><p>&#x53D8;&#x91CF;</p>
+<ul>
+<li><p>&#x58F0;&#x660E;&#x53D8;&#x91CF;&#xFF0C; &#x53EF;&#x4EE5;&#x518D;&#x5168;&#x5C40;&#x8303;&#x56F4;&#x5185;&#x4F7F;&#x7528;&#x3002;</p>
+<ul>
+<li>$a:1;</li>
+</ul>
+</li>
+<li><p>&#x58F0;&#x660E;&#x5E26;&#x9ED8;&#x8BA4;&#x503C;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x8986;&#x76D6;&#x65B9;&#x6CD5;&#x5728;&#x9ED8;&#x8BA4;&#x503C;&#x4E4B;&#x524D;&#x91CD;&#x65B0;&#x58F0;&#x660E;</p>
+<ul>
+<li>$a:1 !default;</li>
+</ul>
+</li>
+<li><p>&#x666E;&#x901A;&#x53D8;&#x91CF;&#x5F15;&#x7528;</p>
+<ul>
+<li>$a;</li>
+</ul>
+</li>
+<li><p>&#x5728;&#x7528;&#x4E8E;&#x5C5E;&#x6027;&#x503C;&#x6216;&#x8005;&#x5B57;&#x7B26;&#x4E32;&#x4E2D;&#x7684;&#x53D8;&#x91CF;&#x5F15;&#x7528;&#x65F6;</p>
+<ul>
+<li><h1 id="a">{$a}</h1>
+</li>
+</ul>
+</li>
+<li><p>&#x591A;&#x503C;&#x53D8;&#x91CF;list</p>
+<ul>
+<li><p>&#x58F0;&#x660E;&#xFF1A;$px: 5px 10px 20px 30px;</p>
+</li>
+<li><p>&#x4F7F;&#x7528;&#xFF1A;$px;</p>
+</li>
+<li><p>&#x51FD;&#x6570;&#xFF1A;&#x53D6;&#x503C;nth($px,$2)&#x3002;&#x66F4;&#x591A;&#x51FD;&#x6570;<a href="http://sass-lang.com/documentation/Sass/Script/Functions.html&#x641C;&#x7D22;" target="_blank">http://sass-lang.com/documentation/Sass/Script/Functions.html&#x641C;&#x7D22;</a> list function</p>
+</li>
+</ul>
+</li>
+<li><p>&#x591A;&#x503C;&#x53D8;&#x91CF;map</p>
+<ul>
+<li><p>&#x58F0;&#x660E;&#xFF1A;$map:{key1:value1,key2:value2}</p>
+</li>
+<li><p>&#x4F7F;&#x7528;&#xFF1A;map-get($map ,$key)&#x53D6;&#x503C;</p>
+</li>
+<li><p>&#x904D;&#x5386;&#xFF1A;@each $k,$v in $map{
+$k;p
+$v;
+}</p>
+</li>
+</ul>
+</li>
+<li><p>&#x5168;&#x5C40;&#x53D8;&#x91CF;</p>
+<ul>
+<li>&#x58F0;&#x660E;$a:1 !global;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>&#x5D4C;&#x5957;</p>
+<ul>
+<li><p>&#x9009;&#x62E9;&#x5668;&#x5D4C;&#x5957;&#xFF1A;&amp;&#x8868;&#x793A;&#x7236;&#x7EA7;</p>
+</li>
+<li><p>&#x5C5E;&#x6027;&#x5D4C;&#x5957;:&#x8868;&#x793A;border-left&#x8FD9;&#x6837;&#x7684;&#x5C5E;&#x6027;&#xFF08;&#x7136;&#x800C;&#x5E76;&#x6CA1;&#x4EC0;&#x4E48;&#x5375;&#x7528;&#xFF09;</p>
+<ul>
+<li>border:{
+left:{
+}
+right:{
+}
+}</li>
+</ul>
+</li>
+<li><p>&#x8DF3;&#x51FA;&#x5D4C;&#x5957; @at-root</p>
+<ul>
+<li><p>&#x8DF3;&#x51FA;&#x666E;&#x901A;&#x5D4C;&#x5957;&#xFF0C;&#x53D8;&#x6210;&#x7236;&#x7EA7;&#x5E73;&#x7EA7;
+.parent{
+@at-root .child{
+}
+@at-root{
+.child1{
+}
+.child2{
+}
+}
+}</p>
+</li>
+<li><p>&#x8DF3;&#x51FA;@media&#x5D4C;&#x5957;&#x4E0D;&#x8DF3;&#x51FA;&#x7236;&#x7EA7;
+@media print{
+@at-root(without:media){
+.child{
+}
+}
+}</p>
+</li>
+<li><p>&#x8DF3;&#x51FA;@media&#x5D4C;&#x5957;&#x548C;&#x7236;&#x7EA7;
+@media print{
+@at-root(without:all){
+.child{
+}
+}
+}</p>
+</li>
+<li><p>&#x5229;&#x7528;&amp;&#x5728;&#x5B50;&#x5143;&#x7D20;&#x4E2D;&#x5D4C;&#x5957;&#x7236;&#x5143;&#x7D20;
+.child{
+@at-root .parent &amp;{</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>}
+</code></pre><p>}</p>
+<pre><code>    - &#x5E94;&#x7528;&#x4E8E;keyframes
+</code></pre><p>.parent{
+    @at-root{
+        @keyframes notion{
+         }
+    }
+}</p>
+<ul>
+<li><p>&#x6DF7;&#x5408; @mixin</p>
+<ul>
+<li>&#x58F0;&#x660E;&#xFF1A;</li>
+<li><p>@mixin name($a:1){
+}</p>
+</li>
+<li><p>&#x4F7F;&#x7528;&#xFF1A;
+@include name(2);</p>
+</li>
+<li><p>&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x53C2;&#x6570;&#x53EF;&#x6709;&#x9ED8;&#x8BA4;&#x503C;</p>
+</li>
+<li><p>&#x591A;&#x7EC4;&#x503C;&#x6DF7;&#x5408;&#xFF1A;&#xFF08;&#x5982;box-shadow&#x7B49;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;&#x53C2;&#x6570;&#xFF09;
+&#x58F0;&#x660E; @minx name($a...){
+}</p>
+</li>
+<li><p>@conten</p>
+<ul>
+<li><p>conten&#x53EF;&#x4EE5;&#x63A5;&#x6536;&#x4E00;&#x5757;&#x6837;&#x5F0F;&#xFF0C;&#x7528;&#x6765;&#x9002;&#x5E94;CSS&#x4E2D;&#x7684;@media</p>
+</li>
+<li><p>&#x5B9A;&#x4E49;&#xFF1A;
+@mixin max-screen($res){
+@media only screen and ( max-width: $res ) {
+@content;
+}
+}
+@include max-screen(480px) {
+body {
+color: red;
+}
+}</p>
+</li>
+<li><p>&#x751F;&#x6210;&#xFF1A;
+@media only screen and (max-width: 480px) {
+body { color: red }
+}</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>&#x7EE7;&#x627F;&#xFF1A;</p>
+<ul>
+<li><p>&#x9009;&#x62E9;&#x5668;&#x7EE7;&#x627F;</p>
+<ul>
+<li>a{}</li>
+<li>.b{@extend a ;}</li>
+</ul>
+</li>
+<li><p>&#x9009;&#x62E9;&#x5360;&#x4F4D;&#x5668;%</p>
+<ul>
+<li><p>&#x4E0D;&#x8C03;&#x7528;&#x4E0D;&#x4EA7;&#x751F;&#x591A;&#x4F59;css&#x6587;&#x4EF6;&#xFF0C;&#x88AB;&#x8C03;&#x7528;&#x7684;a&#x4E0D;&#x4F1A;&#x88AB;&#x7F16;&#x8BD1;</p>
+</li>
+<li><p>&#x58F0;&#x660E;&#xFF1A;
+%a{
+}</p>
+</li>
+<li><p>&#x8C03;&#x7528;&#xFF1A;
+b{
+@extend %a;
+}</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>&#x51FD;&#x6570;<a href="http://sass-lang.com/documentation/Sass/Script/Functions.html" target="_blank">http://sass-lang.com/documentation/Sass/Script/Functions.html</a></p>
+</li>
+<li><p>&#x8FD0;&#x7B97; &#x8FD0;&#x7B97;&#x7B26;&#x524D;&#x540E;&#x7559;&#x7A7A;&#x683C;</p>
+</li>
+<li><p>&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x53CA;&#x5FAA;&#x73AF;</p>
+<ul>
+<li><p>@if&#x5224;&#x65AD;</p>
+<ul>
+<li>@if $a==200px</li>
+</ul>
+</li>
+<li><p>&#x4E09;&#x76EE;&#x5224;&#x65AD;</p>
+<ul>
+<li>&#x8F93;&#x51FA;&#x6700;&#x5927;&#x503C; if($a&gt;$2,$a,$b)</li>
+</ul>
+</li>
+<li>@for &#x5FAA;&#x73AF;<ul>
+<li>@for $i from 1 through
+.item-#{$i} { width: 2em * $i; }
+}&#x5305;&#x62EC;&#x6700;&#x540E;&#x4E00;&#x4E2A;</li>
+<li>@for $i from 1 to 3{
+.item-#{$i} { width: 2em * $i; }
+}&#x4E0D;&#x5305;&#x62EC;&#x6700;&#x540E;&#x4E00;&#x4E2A;</li>
+</ul>
+</li>
+<li><p>@each&#x904D;&#x5386;</p>
+<ul>
+<li><p>&#x5355;&#x4E2A;&#x5B57;&#x6BB5;list&#x6570;&#x636E;&#x5FAA;&#x73AF;</p>
+<ul>
+<li>@each $val in $list {
+$val;
+}</li>
+</ul>
+</li>
+<li><p>&#x591A;&#x4E2A;&#x5B57;&#x6BB5;list&#x6570;&#x636E;&#x5FAA;&#x73AF;</p>
+<ul>
+<li>$list :(1,2,4),(2,3,4)&#xFF1B;
+@each $a $b $c in $list {
+$a ;$b;$c;
+}</li>
+</ul>
+</li>
+<li><p>&#x591A;&#x4E2A;&#x5B57;&#x6BB5;map&#x6570;&#x636E;&#x5FAA;&#x73AF;</p>
+<ul>
+<li>$map:{key1:value1,key2:value2,key3:value3};
+@each $key,$value in $map{
+$key;$value;
+} </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<footer class="page-footer"><span class="copyright">lijingwen.me@foxmail.com all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2018-01-04 16:19:54
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+  <script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+  <div class="bsa-cpc"></div>
+  <script>
+    (function(){
+      if(typeof _bsa !== 'undefined' && _bsa) {
+      _bsa.init('default', 'CKYD62QM', 'placement:vuejsorg', {
+        target: '.bsa-cpc',
+        align: 'horizontal',
+        disable_css: 'true'
+      });
+        }
+    })();
+  </script>
+
+            </div>
+
+            
+                
+                <a href="less.html" class="navigation navigation-prev " aria-label="Previous page: less基本语法">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="css3.html" class="navigation navigation-next " aria-label="Next page: css3">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"sass基本语法","level":"1.5","depth":1,"next":{"title":"css3","level":"1.6","depth":1,"path":"css/css3.md","ref":"css/css3.md","articles":[]},"previous":{"title":"less基本语法","level":"1.4","depth":1,"path":"css/less.md","ref":"css/less.md","articles":[]},"dir":"ltr"},"config":{"plugins":["theme-vuejs","toggle-chapters","splitter","tbfed-pagefooter","-sharing"],"styles":{"website":"static/website.css","ebook":"static/website.css","pdf":"static/website.css","mobi":"static/website.css","epub":"static/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"lijingwen.me@foxmail.com","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"splitter":{},"search":{},"theme-vuejs":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"toggle-chapters":{}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"mybook","gitbook":"*"},"file":{"path":"css/sass.md","mtime":"2018-01-04T08:19:54.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-04T08:34:30.356Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
