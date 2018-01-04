@@ -22,7 +22,7 @@
         - $a;
 
     - 在用于属性值或者字符串中的变量引用时
-        - #{$a}
+        - ```#{$a}```
 
     - 多值变量list
 
@@ -62,58 +62,69 @@
     - 跳出嵌套 @at-root
 
         - 跳出普通嵌套，变成父级平级
-.parent{
-    @at-root .child{
-    }
-    @at-root{
-        .child1{
-        }
-        .child2{
-        }
-    }
-}
-
+            ```less
+            .parent{
+                @at-root .child{
+                }
+                @at-root{
+                    .child1{
+                    }
+                    .child2{
+                    }
+                }
+            }
+            ```
         - 跳出@media嵌套不跳出父级
-@media print{
-    @at-root(without:media){
-        .child{
-        }
-    }
-}
-
+        ```less
+            @media print{
+                @at-root(without:media){
+                    .child{
+                    }
+                }
+            }
+        ```
         - 跳出@media嵌套和父级
-@media print{
-    @at-root(without:all){
-        .child{
-        }
-    }
-}
+        ```less
+            @media print{
+                @at-root(without:all){
+                    .child{
+                    }
+                }
+            }
+        ```
 
         - 利用&在子元素中嵌套父元素
-.child{
-    @at-root .parent &{
 
-
-    }
-}
+        ```less
+            .child{
+                @at-root .parent &{
+                }
+            }
+        ```
 
         - 应用于keyframes
-.parent{
-    @at-root{
-        @keyframes notion{
-         }
-    }
-}
+
+        ```less
+            .parent{
+                @at-root{
+                    @keyframes notion{
+                    }
+                }
+            }
+        ```
 
 - 混合 @mixin
 
     - 声明：
-    - @mixin name($a:1){
-}
+    ```less
+        @mixin name($a:1){
+        }
+    ```
 
     - 使用：
-@include name(2);
-
+    ```less
+        @include name(2);
+    ```
     - 可以有多个参数，参数可有默认值
 
     - 多组值混合：（如box-shadow等可以有多个参数）
@@ -124,22 +135,24 @@
         - conten可以接收一块样式，用来适应CSS中的@media
 
         - 定义：
-@mixin max-screen($res){
-  @media only screen and ( max-width: $res ) {
-      @content;
-  }
-}
-@include max-screen(480px) {
-    body {
-       color: red;
-    }
-}
-
+        ```less
+            @mixin max-screen($res){
+                @media only screen and ( max-width: $res ) {
+                    @content;
+                }
+            }
+            @include max-screen(480px) {
+                body {
+                    color: red;
+                }
+            }
+        ```
         - 生成：
-@media only screen and (max-width: 480px) {
-    body { color: red }
-}
-
+        ```less
+            @media only screen and (max-width: 480px) {
+                body { color: red }
+            }
+        ```
 - 继承：
 
     - 选择器继承
@@ -159,7 +172,7 @@ b{
     @extend %a;
 }
 
-- 函数http://sass-lang.com/documentation/Sass/Script/Functions.html
+- [函数](http://sass-lang.com/documentation/Sass/Script/Functions.html)
 
 - 运算 运算符前后留空格
 
@@ -171,27 +184,34 @@ b{
 
         - 输出最大值 if($a>$2,$a,$b)
     - @for 循环
-        - @for $i from 1 through
-   .item-#{$i} { width: 2em * $i; }
-}包括最后一个
-        - @for $i from 1 to 3{
-   .item-#{$i} { width: 2em * $i; }
-}不包括最后一个
+        ```less
+            @for $i from 1 through{
+                .item-#{$i} { width: 2em * $i; }
+            }包括最后一个
+            @for $i from 1 to 3{
+                .item-#{$i} { width: 2em * $i; }
+            }不包括最后一个
+        ```
     - @each遍历
 
         - 单个字段list数据循环
-            - @each $val in $list {
-   $val;
-}
-
+            ```less
+            @each $val in $list {
+                $val;
+            }
+            ```
         - 多个字段list数据循环
-            - $list :(1,2,4),(2,3,4)；
-@each $a $b $c in $list {
-     $a ;$b;$c;
-}
+            ```less
+                $list :(1,2,4),(2,3,4)；
+                @each $a $b $c in $list {
+                    $a ;$b;$c;
+                }
+            ```
 
         - 多个字段map数据循环
-            - $map:{key1:value1,key2:value2,key3:value3};
-@each $key,$value in $map{
-    $key;$value;
-}
+            ```less
+                $map:{key1:value1,key2:value2,key3:value3};
+                @each $key,$value in $map{
+                    $key;$value;
+                }
+            ```

@@ -1,15 +1,15 @@
 ### css3
 
 #### @keframes 动画
-- @keyframes mykef{
-
-               from{   }
-               to{  }
-               或者是
-               0%{   }
-               20%{    }
-          }
-
+```css
+@keyframes mykef{
+    from{   }
+    to{  }
+    或者是
+    0%{   }
+    20%{    }
+}
+```
 - 可以用来 过渡css样式
 
 - 需要在该元素的样式中添加animation:mykef 5s;用来绑定函数
@@ -42,7 +42,7 @@ animation-fill-mode:forwards;元素保持动画最后的样子。
     - 用来过渡长和宽的变化。
 
     - 可以结合 div:hover设置不同的长度，transtion 要写在div 的样式中
-    - http://www.w3school.com.cn/tiy/t.asp?f=css3_transition2
+    - [demo](http://www.w3school.com.cn/tiy/t.asp?f=css3_transition2)
 
 #### Transform:3D旋转
 

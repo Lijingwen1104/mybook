@@ -1,11 +1,11 @@
 ### 浏览器内部工作原理
+[link1](https://kb.cnblogs.com/page/129756/)
+[link2](https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/)
+[link3](http://taligarsiel.com/Projects/howbrowserswork1.htm)
 
-https://kb.cnblogs.com/page/129756/
-https://www.html5rocks.com/en/tutorials/internals/howbrowserswork/
-http://taligarsiel.com/Projects/howbrowserswork1.htm
 
 - 浏览器主要包括：用户界面、浏览器引擎、渲染引擎、网络、UI后端、js解释器、数据存储
-
+![浏览器内部原理](./../imgs/browsers.png)
 - 渲染引擎：
 用来渲染，在浏览器窗口显示请求的内容。例如webkit和Geoko
 

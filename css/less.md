@@ -19,20 +19,24 @@
 
 - 带参数混合：
 
-    - 声明：.border-radius(@radius){
-                 border-radius:@radius;
-                 -moz-border-radius:@radius;
-                 -webkit-border-radius:@radius;
-          }
-
+    - 声明：
+    ```less
+    .border-radius(@radius){
+        border-radius:@radius;
+        -moz-border-radius:@radius;
+        -webkit-border-radius:@radius;
+    }
+    ```
     - 使用：.border-radius(6px);
 
-    - 带默认值的声明：.border-radius(@radius：5px){
-                                border-radius:@radius;
-                                -moz-border-radius:@radius;
-                                -webkit-border-radius:@radius;
-                           }
-
+    - 带默认值的声明：
+    ```less
+    .border-radius(@radius：5px){
+        border-radius:@radius;
+        -moz-border-radius:@radius;
+        -webkit-border-radius:@radius;
+    }
+    ```
     - 使用：.border-radius;
 
 - 多参数混合
@@ -59,58 +63,67 @@
     - 作用：通过参数控制mixin行为
 
     - 声明：
-.minx(dark,@color){
-   color:darken(@color,10%)
-}
-.minx(light,@color){
-   color:lighten(@color,10%)
-}
-↓接收所有参数
-.minx(@_,@color){
-     display:block;
-}
-
+    ```less
+        .minx(dark,@color){
+            color:darken(@color,10%)
+        }
+        .minx(light,@color){
+            color:lighten(@color,10%)
+        }
+    ```
+    ↓接收所有参数
+    ```less
+        .minx(@_,@color){
+            display:block;
+        }
+    ```
     - 调用：
-@switch:light;
-.class{
-    .mixin(@switch,#888888) ;
-}
-
+        ```less
+            @switch:light;
+            .class{
+                .mixin(@switch,#888888) ;
+            }
+        ```
     - 得到：
-.class{
-    color:#a2a2a2;
-    display:block;
-}
+        ```less
+            .class{
+                color:#a2a2a2;
+                display:block;
+            }
+        ```
 - Guards（when后面的表达式）
 
     - 作用：通过表达式（expressions）控制minx行为
     - ↓实例：判断color的亮度，大于50%时背景色为黑，小于时背景色为白色
 
     - 声明：
-. mixin ( @ a ) when ( lightness ( @ a ) >= 50% ){
-    background-color : black;
-}
-. mixin ( @ a ) when ( lightness ( @ a ) < 50% ){
-    background-color : white ;
-}
-. mixin ( @ a ) {
-    color:@a;
-}
-
+    ```less
+        . mixin ( @ a ) when ( lightness ( @ a ) >= 50% ){
+            background-color : black;
+        }
+        . mixin ( @ a ) when ( lightness ( @ a ) < 50% ){
+            background-color : white ;
+        }
+        . mixin ( @ a ) {
+            color:@a;
+        }
+    ```
     - 调用：
-.class1{  .minx ( #ddd )  }
-.class2{  .minx ( #555 )  }
-
+    ```less
+        .class1{  .minx ( #ddd )  }
+        .class2{  .minx ( #555 )  }
+    ```
     - 得到：
-.class1 {
-    background-color : black;
-    color:#ddd;
- }
-.class2 {
-    background-color : white;
-    color:#555;
- }
-
+    ```less
+        .class1 {
+            background-color : black;
+            color:#ddd;
+        }
+        .class2 {
+            background-color : white;
+            color:#555;
+        }
+    ```
     - 注意：可以参数之间作比较。可以检查传入的参数类型。或者检查传入值（数字）的单位。
 
     - 用 , 分隔表示逻辑或，用and 表示逻辑与， 用not表示否定
@@ -129,23 +142,25 @@
     - 作用：可以把混合封装起来，然后在调用时像调用对象的属性一样调用
 
     - 声明：
-# bundle｛
-　. button ( ) {
-        display : block ;
-        border : 1px solid black;
-        background - color : gery;
-        &：hover { background-color : white  }
-    }
-    . tab {  ... }
-    .citation { ... }
-}
-
+    ```less
+        # bundle｛
+        　. button ( ) {
+                display : block ;
+                border : 1px solid black;
+                background - color : gery;
+                &：hover { background-color : white  }
+            }
+            . tab {  ... }
+            .citation { ... }
+        }
+    ```
     - 调用 ：
-# header a{
-   color :orange;
-   #bundle > . button ;
-}
-
+    ```less
+        # header a{
+            color :orange;
+            #bundle > . button ;
+        }
+    ```
 - 作用域：
 
     - 找不到的变量会向上查找
@@ -161,9 +176,10 @@
     - 说明：可以在字符串中插入变量
 
     - 使用：
-@base-url : " http://localhost:8080 "
-background-imge : (  " @ { base-url }  /images / bg.png " )
-
+    ```less
+        @base-url : " http://localhost:8080 "
+        background-imge : (  " @ { base-url }  /images / bg.png " )
+    ```
 - 避免编译
     - ~" 各种字符串 "
 
@@ -172,10 +188,12 @@ background-imge : (  " @ { base-url }  /images / bg.png " )
     - 说明：在选择器中使用less变量
 
     - 使用：
-@name：blocked；
-. @ { name }{
-    color : black ;
-}
+    ```less
+        @name：blocked；
+        . @ { name }{
+            color : black ;
+        }
+    ```
 - JavaScript求值
 
     - 使用：

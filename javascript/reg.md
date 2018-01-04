@@ -16,9 +16,10 @@
 
         - 原义文本字符（表示字符本身含义）
 
-        - 元字符（在正则表达式中有特殊含义的非字母字符）
+        - 元字符（在正则表达式中有特殊含义的非字母字符） . * + ？ $ ^. | \ ( ) { }
 
-. * + ？ $ ^. | \ ( ) { }
+        ![图片1](./../imgs/reg1.png)
+
 
 - 字符类
     - [  ]来构建类。指符合某些特性的对象，一个泛指，而不是某个特定字符。每个元字符之间是或的关系。
@@ -31,6 +32,8 @@
 - 预定义类
 
     - 用来匹配常见字符类
+
+    ![图片2](./../imgs/reg2.png)
 
 - 边界
     - \b 单词边界  \B非单词边界   以^ 啥开始  以啥$ 结束
@@ -105,3 +108,38 @@
             - 第二个元素：与上一个子表达式匹配的文本
             - n……
 
+- 正则小demo
+
+```js
+function reset(str){
+    //my-name-is-lee 和 myNameIsLee之间互相转换
+    if(-1<str.indexOf('-')){
+        return str.replace(/-[a-z]/g,function(a){
+            return a.toUpperCase().replace('-','')
+        })
+    }else{
+        return str.replace(/[A-Z]/g,function(a){
+            return '-'+a.toLowerCase()
+        })
+    }
+} 
+function getString(str){
+    //返回字符串中数字的位置
+    var reg=/[0-9]/g;
+    var arr=[]
+    let bool=true;
+    while(bool){
+        var value=reg.exec(str)
+        bool=!!value
+        if(bool){
+            arr.push(value.index)
+        }
+    }
+    return arr;
+}
+var email='/^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/'
+var idcard='/^(\d{15}$|^\d{18}$|^\d{17}(\d|X|x))$/'
+var phone='/^[134|135|136|137|138|139|147|150|151|152|157|158|159|172|178|182|183|184|187|188|130|131|132|145|155|156|171|175|176|185|186|133|149|153|173|177|180|181|189|179]\d{8}$/'
+var cannull='/(^$)|\w+/'
+console.log(getString('my 0 name is 2 ljw'));
+```

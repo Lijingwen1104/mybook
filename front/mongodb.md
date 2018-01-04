@@ -75,35 +75,14 @@ db.collection_name.remove({})
 db.collection_name.find().pretty() 格式化方式显示所有文档
 db.collection_name.findOne()方法，只返回一个文档
 
-- 操作
-格式
-范例
-RDBMS中的类似语句
-等于
-{<key>:<value>}
-
-- db.col.find({"by":"菜鸟教程"}).pretty()
-where by = '菜鸟教程'
-小于
-{<key>:{$lt:<value>}}
-db.col.find({"likes":{$lt:50}}).pretty()
-where likes < 50
-小于或等于
-{<key>:{$lte:<value>}}
-db.col.find({"likes":{$lte:50}}).pretty()
-where likes <= 50
-大于
-{<key>:{$gt:<value>}}
-db.col.find({"likes":{$gt:50}}).pretty()
-where likes > 50
-大于或等于
-{<key>:{$gte:<value>}}
-db.col.find({"likes":{$gte:50}}).pretty()
-where likes >= 50
-不等于
-{<key>:{$ne:<value>}}
-db.col.find({"likes":{$ne:50}}).pretty()
-where likes != 50
+操作 | 格式 | 范例 | RDBMS中的类似语句 
+--|--|--|-- 
+等于 | {<key>:<value>} | db.col.find({"by":"菜鸟教程"}).pretty() | where by = '菜鸟教程' 
+小于 | {<key>:{$lt:<value>}} | db.col.find({"likes":{$lt:50}}).pretty() | where likes < 50 
+小于或等于 | {<key>:{$lte:<value>}} | db.col.find({"likes":{$lte:50}}).pretty() | where likes <= 50 
+大于 | {<key>:{$gt:<value>}} | db.col.find({"likes":{$gt:50}}).pretty() | where likes > 50 
+大于或等于 | {<key>:{$gte:<value>}} | db.col.find({"likes":{$gte:50}}).pretty() | where likes >= 50 
+不等于 | {<key>:{$ne:<value>}} | db.col.find({"likes":{$ne:50}}).pretty() | where likes != 50
 
 - and条件查询
 db.collection_name.find({key1:value1, key2:value2}).pretty()
@@ -113,82 +92,28 @@ db.collection_name.find({$or:[{"key1":"value1"},  {"key2":"value2"}]})
 db.collection_name.find({"likes": {$gt:50}, $or: [{"by": "菜鸟教程"},{"title": "MongoDB 教程"}]}).pretty()
 - $type操作符
 db.collection_name.find({"name":{$type:2}}
-类型
-数字
-备注
-Double
-1
 
-
-String
-2
-
-
-Object
-3
-
-
-Array
-4
-
-
-Binary data
-5
-
-
-Undefined
-6
-已废弃。
-Object id
-7
-
-
-Boolean
-8
-
-
-Date
-9
-
-
-Null
-10
-
-
-Regular Expression
-11
-
-
-JavaScript
-13
-
-
-Symbol
-14
-
-
-JavaScript (with scope)
-15
-
-
-32-bit integer
-16
-
-
-Timestamp
-17
-
-
-64-bit integer
-18
-
-
-Min key
-255
-Query with -1.
-
-- Max key
-127
+类型 | 数字 | 备注
+--|--|--
+Double | 1 |
+String | 2 |
+Object | 3 |
+Array | 4 |
+Binary data | 5 |
+Undefined | 6 |已废弃。
+Object id | 7 |
+Boolean | 8 |
+Date | 9 |
+Null | 10 |
+Regular Expression | 11 |
+JavaScript | 13 |
+Symbol | 14 |
+JavaScript (with scope) | 15 |
+32-bit integer | 16 |
+Timestamp | 17 |
+64-bit integer | 18 |
+Min key | 255 | Query with  -1 
+Max key | 127 |
 
 
 - 读取指定数量的记录Limit()
@@ -205,52 +130,30 @@ db.collection_name.find().sort({key:number})
 索引是一种特殊的数据结构，储存在一个易于遍历读取的数据集合中，索引是对数据库表一列或多列的值进行排序的一种结构。索引也可以是多个字段构成的。
 索引的创建
 db.collection_name.ensureIndex({key:1});//1是按升序创建索引，-1是按降序创建索引
-Parameter
-Type
-Description
-background
-Boolean
-建索引过程会阻塞其它数据库操作，background可指定以后台方式创建索引，即增加 "background" 可选参数。 "background" 默认值为false。
 
-- unique
-Boolean
-建立的索引是否唯一。指定为true创建唯一索引。默认值为false.
-
-- name
-string
-索引的名称。如果未指定，MongoDB的通过连接索引的字段名和排序顺序生成一个索引名称。
-dropDups
-Boolean
-在建立唯一索引时是否删除重复记录,指定 true 创建唯一索引。默认值为 false.
-
-- sparse
-Boolean
-对文档中不存在的字段数据不启用索引；这个参数需要特别注意，如果设置为true的话，在索引字段中不会查询出不包含对应字段的文档.。默认值为 false.
-
-- expireAfterSeconds
-integer
-指定一个以秒为单位的数值，完成 TTL设定，设定集合的生存时间。
-v
-index version
-索引的版本号。默认的索引版本取决于mongod创建索引时运行的版本。
-weights
-document
-索引权重值，数值在 1 到 99,999 之间，表示该索引相对于其他索引字段的得分权重。
-default_language
-string
-对于文本索引，该参数决定了停用词及词干和词器的规则的列表。 默认为英语
-language_override
-string
-对于文本索引，该参数指定了包含在文档中的字段名，语言覆盖默认的language，默认值为 language.
+Parameter | Type | Description
+--- | --- | ---
+background | Boolean | 建索引过程会阻塞其它数据库操作，background可指定以后台方式创建索引，即增加 "background" 可选参数。 "background" 默认值为false。
+unique |Boolean |建立的索引是否唯一。指定为true创建唯一索引。默认值为false. 
+name |string |索引的名称。如果未指定，MongoDB的通过连接索引的字段名和排序顺序生成一个索引名称。 
+dropDups |Boolean |在建立唯一索引时是否删除重复记录,指定 true 创建唯一索引。默认值为 false. 
+sparse |Boolean | 对文档中不存在的字段数据不启用索引；这个参数需要特别注意，如果设置为true的话，在索引字段中不会查询出不包含对应字段的文当。默认值为 false. 
+expireAfterSeconds |integer |指定一个以秒为单位的数值，完成 TTL设定，设定集合的生存时间。 
+v |index version |索引的版本号。默认的索引版本取决于mongod创建索引时运行的版本。 
+weights |document |索引权重值，数值在 1 到 99,999 之间，表示该索引相对于其他索引字段的得分权重。 
+default_language |string |对于文本索引，该参数决定了停用词及词干和词器的规则的列表。 默认为英语 
+language_override |string |对于文本索引，该参数指定了包含在文档中的字段名，语言覆盖默认的language，默认值为language. |
 
 - 聚合
 用于处理数据，如平均值，求和等。并返回计算后的结果。
+```js
 db.collection_name.aggregate(aggregate_opration)
 db.mycol.aggregate(  [
   {  $group :
     {  _id : "$by_user", num_tutorial :   {  $sum : 1  } }
   }
-]  )
+])
+```
 
 - 管道的概念
 管道在Unix和Linux中将当前命令的输出结果作为下一个命令的参数。
