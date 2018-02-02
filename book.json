@@ -7,13 +7,47 @@
     "mobi": "static/website.css",
     "epub": "static/website.css"
  },
-  "plugins": ["theme-vuejs","toggle-chapters","splitter","tbfed-pagefooter","-sharing"],
+  "plugins": [
+    "splitter",
+    "tbfed-pagefooter",
+    "-sharing",
+    "-search",
+    "-lunr",
+    "search-plus",
+    "prism",
+    "editlink",
+    "github",
+    "expandable-chapters-small",
+    "favicon",
+    "copy-code-button",
+    "back-to-top-button",
+    "theme-comscore",
+    "-disqus"
+  ],
   "pluginsConfig":{
     "tbfed-pagefooter": {
       "copyright":"lijingwen.me@foxmail.com",
       "modify_label": "该文件修订时间：",
       "modify_format": "YYYY-MM-DD HH:mm:ss"
-    }
+    },
+    "editlink": {
+      "base": "https://github.com/tuhu/Activity/tree/Vue-components/vue/docs",
+      "label": "编辑本页",
+      "multilingual": false
+    },
+    "github": {
+      "url": "https://github.com/tuhu/Activity"
+    },
+    "favicon": {
+      "shortcut": "assets/static/favicon.ico",
+      "bookmark": "assets/static/favicon.ico",
+      "appleTouch": "assets/static/hu.png",
+      "appleTouchMore": {
+          "120x120": "assets/static/hu.png",
+          "180x180": "assets/static/hu.png"
+      }
+    },
+    "expandable-chapters-small":{}
   }
 
 }
