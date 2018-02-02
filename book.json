@@ -31,12 +31,12 @@
       "modify_format": "YYYY-MM-DD HH:mm:ss"
     },
     "editlink": {
-      "base": "https://github.com/tuhu/Activity/tree/Vue-components/vue/docs",
+      "base": "https://github.com/Lijingwen1104/mybook/tree/master",
       "label": "编辑本页",
       "multilingual": false
     },
     "github": {
-      "url": "https://github.com/tuhu/Activity"
+      "url": "https://github.com/Lijingwen1104"
     },
     "favicon": {
       "shortcut": "assets/static/favicon.ico",
