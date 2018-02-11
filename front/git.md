@@ -59,4 +59,18 @@
     - rm a.txt 或者直接在文件夹中删除文件。
     - git rm a.txt 再版本库中删除改文件
     - git commit -m"删除信息"
-
+- gitignore 新增忽略的文件
+   - git rm -r --cached .
+   - git add .
+   - git commit -m 'updata .gitignore'
+- 远程分支检出到 本地分支
+  - git checkout -b master origin/master 
+- 重命名分支
+  - git branch -m new old
+- 删除远程分支
+  - git push origin --delete master
+- 删除本地分支
+  - git branch -D master
+- 本地分支推送到远程没有的分支
+  - g push --set-upstream origin newbranch 
+-  git remote add Activity git@github.com:tuhu/Activity.git
