@@ -1,3 +1,8 @@
 _book/*
 .DS_Store
 node_modules/
+<<<<<<< HEAD
+=======
+_book/
+dist/
+>>>>>>> 24ed1d27489c58dc38b3ef1a197dd89b40325f3f
