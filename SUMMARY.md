@@ -1,6 +1,7 @@
 # Summary
 
 * [简介](README.md)
+* [nvm&nrm](front/nvm&nrm.md)
 * [数组方法的实现](javascript/array.md)
 * [容易混淆的字符串、数组方法](javascript/methods.md)
 * [正则表达式基本语法](javascript/reg.md)
