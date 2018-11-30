@@ -72,3 +72,14 @@ instance 判断的是 a.__proto__ 指向的是A 与 A.prototype 不相等，所�
 mdn :  instanceof 运算符用来检测 constructor(A).prototype 是否存在于参数 object(a) 的原型链上。
 
 
+
+
+Object.keys() 与 for in 
+
+class 中的this 
+
+class extends 的关系
+
+class B class extends  A  B 的属性不能继承A 
+
+class constructor 中的 this.name 不会被继承，  方法会被继承 super 和 this
