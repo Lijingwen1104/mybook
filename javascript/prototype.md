@@ -1,7 +1,5 @@
 ### JavaScript 第一话 原型
 
-JavaScript区别于java， 没有class类的概念，而是使用了原型链。
-
 👌 先来搞明白什么是原型链
 
 #### 构造函数 Pserson 与 实例 xiaoming
@@ -103,6 +101,21 @@ xiaoming.constructor === Person
 ```
 注释： 对于 xiaoming.constructor === Person ， xiaoming 并没有 constructor 属性，然鹅，找到了xiaoming 原型上的 constructor, 原型的 constructor 指向了 Person 👌 
 
+instanceof 
+
+function instance_of(L, R) {//L 表示左表达式，R 表示右表达式
+ var O = R.prototype;// 取 R 的显示原型
+ L = L.__proto__;// 取 L 的隐式原型
+ while (true) { 
+   if (L === null) 
+     return false; 
+   if (O === L)// 这里重点：当 O 严格等于 L 时，返回 true 
+     return true; 
+   L = L.__proto__; 
+ } 
+}
+
+其实是判断的是 xiaoming 的 __proto__ 与 Person.prototype 是否向相等
 
 
 #### 
