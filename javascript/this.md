@@ -31,3 +31,4 @@ dog.name
 
 4. 
 使用 Call apply bind等改变
+

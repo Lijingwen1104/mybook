@@ -1,4 +1,4 @@
-1. 项目经历
+<!-- 1. 项目经历
 2. vue
 生命周期 作用 created mouted 区别
 父子组件通信
@@ -14,7 +14,16 @@ vue 原理
 vdom 的原理
 defineProperty 
 3. 判断对象类型
+
 4. 闭包及应用
+var fun1 = function() {
+    var a = 1;
+    return function() {
+        a = a +1
+        return  a
+    }
+}
+var a = fun1()
 5. 原型是怎么回事 手写原型链的继承
 6. 定时器哪几种 区别用法 执行时机
 7. settimeout 实现 setintervel  缺点
@@ -30,7 +39,9 @@ call apply bind 三种方法 apply call 实现bind
 16. ajax 调用过程 XHR 
 17. get post 区别 
 18. 常用状态码 200 204  304 302 301 404 502 500 504 
+200成功 ；204无内容； 301页面转移至新的url；302暂时转移至新的url ；304命中协商缓存，从缓存中读取； 404找不到页面 ；500服务器错误 ；502； 504网关超时；
 19. 跨域有哪几种方式
+
 20. jsonp 的原理
 21. 浏览器缓存怎么做 那几个header 确定
 22. 项目性能优化
@@ -54,10 +65,55 @@ call apply bind 三种方法 apply call 实现bind
 30. url 查询字符解析
 31. 移动端兼容性问题 适配  各种居中
 32. 定位有什么区别
-33. 浮动 文档流 清楚浮动
-34. 登高布局
+33. 浮动 文档流 清除浮动
+34. 等高布局
 35. BFC 相关
 36. 动画
 37. transition animation 
 38. nodejs express koa 中间件
-39. 
+39. WebSocket
+
+
+var age = 2
+var person = function() {
+    var age = 1 
+}
+person.say = function(){
+    console.log(age)
+}
+person.say()
+
+
+var fun1 = function() {
+    var a = 1;
+    return function() {
+        a = a +1
+        return  a
+    }
+}
+var a = fun1()
+
+
+
+// this
+var fun1 = function() {
+    var a = 1;
+    return function() {
+        a = a +1
+        return  a
+    }
+}
+var a = fun1()
+
+
+Object.keys() 与 for in 
+
+class 中的this 
+
+class extends 的关系
+
+class B class extends  A  B 的属性不能继承A 
+
+class constructor 中的 this.name 不会被继承，  方法会被继承 super 和 this
+
+-->
