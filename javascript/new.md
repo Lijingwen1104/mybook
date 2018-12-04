@@ -43,3 +43,11 @@ Person.call(person)
 
 person.say()
 ```
+
+然而 __proto__并不是标准的属性， 所以推荐使用 es6中的新语法
+
+```js
+Object.setPrototypeOf(person, Person.prototype)
+
+``` 
+来为对象设置原型

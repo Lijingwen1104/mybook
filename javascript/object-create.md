@@ -1,10 +1,10 @@
-# 第三话 Object.created 与new的区别
+# 第三话 Object.created 与 new 的区别
 
 [第二话 new到底干了些什么？](new.md)
 
 ## Object.create
 
-> Object.create()方法是 ECMAScript 5中新增的方法，这个方法用于创建一个新对象。被创建的对象会继承另一个对象的原型，在创建新对象时还可以指定一些属性。
+> Object.create()方法是 ECMAScript 5中的方法，这个方法用于创建一个新对象。被创建的对象会继承另一个对象的原型，在创建新对象时还可以指定一些属性。
 
 
 ```js
@@ -59,3 +59,13 @@ eg.
 A.isPrototypeOf(a) // true
 ``` 
 
+获取实例上的原型对象也不要使用 __proto__属性，请使用 ```Object.getPrototypeOf```
+
+eg.
+```js
+function A() {
+
+}
+var a = new A()
+Object.getPrototypeOf(a) === A.prototype // true
+```

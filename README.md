@@ -116,4 +116,21 @@ class B class extends  A  B 的属性不能继承A
 
 class constructor 中的 this.name 不会被继承，  方法会被继承 super 和 this
 
+    * [第五话 数组方法的实现](javascript/array.md)
+    * [闭包及其应用](javascript/closure.md)
+    * [容易混淆的字符串、数组方法](javascript/methods.md)
+    * [正则表达式基本语法](javascript/reg.md)
+* [css](css/css3.md)
+    * [css3](css/css3.md)
+    * [less基本语法](css/less.md)
+    * [sass基本语法](css/sass.md)
+* [nvm&nrm](front/nvm&nrm.md)
+* [浏览器内部工作原理](front/browserswork.md)
+* [MongoDB基本语法](front/mongodb.md)
+* [git基本语法](front/git.md)
+* [vue](vue/vue生命周期.md)
+    * [生命周期](vue/vue生命周期.md)
+
+
+
 -->
