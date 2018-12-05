@@ -6,66 +6,48 @@
 
 > Object.create()方法是 ECMAScript 5中的方法，这个方法用于创建一个新对象。被创建的对象会继承另一个对象的原型，在创建新对象时还可以指定一些属性。
 
+Object.create(A) 方法用来创造一个原型为A 的实例。
 
 ```js
-function A() {
+function Person() {
 
 }
-var a = Object.create(A)
+var xiaoming = Object.create(Person)
+
+// ⬇ xiaoming的原型 直接指向了Person，而不是像通过构造函数一样，指向Person.prototype。没有中间商赚差价。
+xiaoming.__proto__ === Person //true
+
 ```
-
-那么Object.create(A)实际上做了哪些操作呢？ 我们模拟一个Create。
+那么Object.create(Person)实际上做了哪些操作呢？ 我们模拟一个Create。
 
 ```js
-function A() {
+function Person() {
 
 }
-Object.myCreate =  function (A) {
+Object.myCreate =  function (Person) {
     // 1. 创建一个空构造函数F， 
     var F = function () {};
     // 2. 将A作为F的原型对象
-    F.prototype = A;
+    F.prototype = Person;
     // 3. 返回这个构造函数的实例
     return new F();
 }
-var a = Object.myCreate(A)
+var xiaoming = Object.myCreate(Person)
 ```
 
-a 是myCreate函数内部的F的实例，
-
-a.__proto__ => F.prototype
-
-F.prototype => A
+xiaoming 是myCreate函数内部的F的实例，并不是Person的实例。
 
 
-> Object.create(A) 方法用来创造一个原型为A 的实例。
-```js
-a.__proto__ === Person // true
 ```
-那么通过 Object.create 新建的实例可以通 instanceof 来判断原型吗？ 
+xiaoming.__proto__ => F.prototype
 
-```js
-a instanceof A  // false 
+F.prototype => Person
 ```
 
-[第一话中关于instanceof的说明 ](原型.html#instanceof)
+这里就需要 ```Object.isPrototypeOf```方法来判断a的原型是谁了。
 
-instance 判断的是 a.__proto__ 与 A.prototype 是否相等。所以***不能***使用instanceof来判断Object.create新建的实例的原型。
-
-这里就需要 ```Object.isPrototypeOf```方法来判断a 的原型是谁了。
-
+不能使用 instanceof 判断
 eg.
 ```js
 A.isPrototypeOf(a) // true
 ``` 
-
-获取实例上的原型对象也不要使用 __proto__属性，请使用 ```Object.getPrototypeOf```
-
-eg.
-```js
-function A() {
-
-}
-var a = new A()
-Object.getPrototypeOf(a) === A.prototype // true
-```
