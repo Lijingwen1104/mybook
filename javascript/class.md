@@ -16,8 +16,6 @@ babel转义后
 
 ```js
 "use strict";
-// 以下babel转义忽略改函数
-
 function _classCallCheck(instance, Constructor) { 
   //  xiaoming inxtanceof Person 
   if (!(instance instanceof Constructor)) { 
@@ -117,7 +115,7 @@ Object.getPrototypeOf(xiaoming)=== Student.prototype // true
 
 ```
 
-👌 我们可以大胆猜测， extends 是通过类似 ```var Student = Object.create(Person)``` 的方法来实现的。
+<!-- 👌 我们可以大胆猜测， extends 是通过类似 ```var Student = Object.create(Person)``` 的方法来实现的。 -->
 
 
 ## 第五节 静态方法

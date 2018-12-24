@@ -95,16 +95,22 @@ xiaoming instanceof Person // true
 
 xiaoming.__proto__ === Person.prototype
 
+// ⬇ 对于 xiaoming.constructor === Person ， xiaoming 并没有 constructor 属性，然鹅，找到了xiaoming 原型上的 constructor,原型的 constructor 指向了 Person 👌 
 xiaoming.constructor === Person
 
-// 注释： 对于 xiaoming.constructor === Person ， xiaoming 并没有 constructor 属性，然鹅，找到了xiaoming 原型上的 constructor, 原型的 constructor 指向了 Person 👌 
+// ⬇ 判断原型是否为实例的原型？
+Person.prototype.isPrototypeOf(xiaoming) 
+
+// ⬇ 判断实例的原型是谁？
+Object.getPrototypeOf(xiaoming) === Person.prototype
+
 
 ```
 
 ## instanceof 原理
 
 
-> instanceof 运算符用来检测 constructor(A).prototype 是否存在于参数 object(a) 的原型链上。
+> instanceof 运算符用来检测 构造函数的prototype 是否存在于参数 实例 的原型链上。
 
 ```js 
 function instance_of(L, R) {//L 表示左表达式，R 表示右表达式
@@ -119,6 +125,7 @@ function instance_of(L, R) {//L 表示左表达式，R 表示右表达式
  } 
 }
 ```
+
 
 其实是判断的是 xiaoming 的 ```__proto__``` 与 ```Person.prototype```是否向相等
 
