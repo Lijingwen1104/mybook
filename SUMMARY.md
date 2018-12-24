@@ -1,8 +1,8 @@
 # Summary
 
 * [简介](README.md)
-* [JavaScript](javascript/methods.md)
-    * [第一话 原型](javascript/原型.md)
+* [JavaScript](javascript/prototype.md)
+    * [第一话 原型](javascript/prototype.md)
     * [第二话 new到底干了些什么？](javascript/new.md)
     * [第三话 Object.created 与new的区别](javascript/object-create.md)
     * [第三话 this的指向](javascript/this.md)
