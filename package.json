@@ -16,9 +16,5 @@
   "bugs": {
     "url": "https://github.com/Lijingwen1104/mybook/issues"
   },
-  "homepage": "https://github.com/Lijingwen1104/mybook#readme",
-  "dependencies": {
-    "gitbook": "^2.6.9",
-    "gitbook-cli": "^2.3.2"
-  }
+  "homepage": "https://github.com/Lijingwen1104/mybook#readme"
 }
