@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Lijingwen1104/mybook#readme",
   "devDependencies": {
-    "gitbook": "^2.6.9"
+    "gitbook": "^2.6.9",
+    "gitbook-cli": "^2.3.2"
   }
 }
